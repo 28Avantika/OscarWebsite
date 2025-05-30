@@ -34,7 +34,7 @@ To run this project locally:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/28Avantika/OscarCafeWebsite.git
+   git clone https://github.com/28Avantika/OscarWebsite.git
 
 ## 📸 Screenshots
 
