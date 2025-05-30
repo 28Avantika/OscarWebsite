@@ -23,9 +23,9 @@ import MenuFlipbook from './Components/Menu/MenuFlibook';
 function App() {
   return (
     <CartProvider>
-    <AuthProvider>
-      <YourAppContent />
-    </AuthProvider>
+      <AuthProvider>
+        <YourAppContent />
+      </AuthProvider>
     </CartProvider>
   );
 }
@@ -33,21 +33,21 @@ function App() {
 function YourAppContent() {
 
   return (
-   
-        <div className='App' >
-        <NavBarComp />
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/insights' element={<CafeInsights />} />
-          <Route path='/menu' element={<MenuPage />} />
-          <Route path='/menuItems' element={<MenuItems />} />
-          <Route path='/games' element={<Games />} />
-          <Route path='/menuFlipbook' element={<MenuFlipbook />} />
-        </Routes>
-       
-        <FooterSec />
-      </div>
-    
+
+    <div className='App' >
+      <NavBarComp />
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/insights' element={<CafeInsights />} />
+        <Route path='/menu' element={<MenuPage />} />
+        <Route path='/menuItems' element={<MenuItems />} />
+        <Route path='/games' element={<Games />} />
+        <Route path='/menuFlipbook' element={<MenuFlipbook />} />
+      </Routes>
+
+      <FooterSec />
+    </div>
+
   );
 }
 

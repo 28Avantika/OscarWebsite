@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const AboutUs: React.FC = () => {
   const navigate = useNavigate()
   return (
-    <section className="relative bg-[url('/images/bg-aboutpng')] bg-cover bg-center bg-no-repeat text-white p-4 md:p-10  ">
+    <section id="about-section" className="relative bg-[url('/images/bg-aboutpng')] bg-cover bg-center bg-no-repeat text-white p-4 md:p-10  ">
       <div className="absolute inset-0 bg-black/60"></div> {/* Overlay */}
 
       <div className="relative z-10 max-w-4xl mx-auto  space-y-6">

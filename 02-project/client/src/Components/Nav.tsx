@@ -59,7 +59,7 @@ function NavBarComp() {
 
                 <Navbar.Collapse id="navbar-nav" className="">
                     <Nav className="ml-auto">
-                        
+
                         <Nav.Link
                             onClick={() => {
                                 const section = document.getElementById("about-section");
@@ -80,7 +80,7 @@ function NavBarComp() {
                             }}
                             className="neon-link"
                         >
-                        Menu
+                            Menu
                         </Nav.Link><Nav.Link
                             onClick={() => {
                                 const section = document.getElementById("zone-section");
@@ -90,7 +90,7 @@ function NavBarComp() {
                             }}
                             className="neon-link"
                         >
-                        Games
+                            Games
                         </Nav.Link>
                         <Nav.Link href="/games" className="neon-link">Gaming</Nav.Link>
                         <Nav.Link
