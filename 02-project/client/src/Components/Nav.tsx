@@ -1,10 +1,13 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom"; // Added Link and useNavigate
 import AuthButton from "./Auth/AuthButton";
 import { useAuth } from "../context/AuthContext";
 import "../index.css";
+
 function NavBarComp() {
     const [scrolled, setScrolled] = useState(false);
+    const navigate = useNavigate(); // For programmatic navigation
 
     useEffect(() => {
         const handleScroll = () => {
@@ -17,14 +20,32 @@ function NavBarComp() {
 
     const { user } = useAuth();
 
+    const handleContactClick = () => {
+        // Navigate to home first if not already there
+        if (window.location.pathname !== "/") {
+            navigate("/");
+            setTimeout(() => {
+                const section = document.getElementById("contact-section");
+                if (section) {
+                    section.scrollIntoView({ behavior: "smooth" });
+                }
+            }, 100); // Small delay to allow page transition
+        } else {
+            const section = document.getElementById("contact-section");
+            if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    };
+
     return (
         <Navbar
             expand="lg"
-            className={` custom-navbar ${scrolled ? "scrolled" : ""}`}
+            className={`custom-navbar ${scrolled ? "scrolled" : ""}`}
             fixed="top"
         >
             <Container>
-                <Navbar.Brand href="/">
+                <Navbar.Brand as={Link} to="/"> {/* Changed href to as={Link} to="/" */}
                     <img
                         src="/images/OgLogo.png"
                         width="60"
@@ -36,10 +57,10 @@ function NavBarComp() {
 
                 <Nav className="ms-auto d-none d-lg-flex">
                     <div className="flex flex-col items-center text-center leading-tight">
-                        <Nav.Link href="/" className="text-6xl font-extrabold text-white neon-link p-0 m-0 leading-none">
+                        <Nav.Link as={Link} to="/" className="text-6xl font-extrabold text-white neon-link p-0 m-0 leading-none">
                             OSCAR
                         </Nav.Link>
-                        <Nav.Link href="/" className="text-lg italic text-white neon-link p-0 m-0 leading-none">
+                        <Nav.Link as={Link} to="/" className="text-lg italic text-white neon-link p-0 m-0 leading-none">
                             Cafe &amp; Game Zone
                         </Nav.Link>
                     </div>
@@ -59,58 +80,12 @@ function NavBarComp() {
 
                 <Navbar.Collapse id="navbar-nav" className="">
                     <Nav className="ml-auto">
-
+                        <Nav.Link as={Link} to="/insights" className="neon-link">About</Nav.Link>
+                        <Nav.Link as={Link} to="/menu" className="neon-link">Menu</Nav.Link>
+                        <Nav.Link as={Link} to="/games" className="neon-link">Gaming</Nav.Link>
+                        <Nav.Link as={Link} to="/gallery" className="neon-link">Gallery</Nav.Link>
                         <Nav.Link
-                            onClick={() => {
-                                const section = document.getElementById("about-section");
-                                if (section) {
-                                    section.scrollIntoView({ behavior: "smooth" });
-                                }
-                            }}
-                            className="neon-link"
-                        >
-                            About
-                        </Nav.Link>
-                        <Nav.Link
-                            onClick={() => {
-                                const section = document.getElementById("zone-section");
-                                if (section) {
-                                    section.scrollIntoView({ behavior: "smooth" });
-                                }
-                            }}
-                            className="neon-link"
-                        >
-                            Menu
-                        </Nav.Link><Nav.Link
-                            onClick={() => {
-                                const section = document.getElementById("zone-section");
-                                if (section) {
-                                    section.scrollIntoView({ behavior: "smooth" });
-                                }
-                            }}
-                            className="neon-link"
-                        >
-                            Games
-                        </Nav.Link>
-                        <Nav.Link
-                            onClick={() => {
-                                const section = document.getElementById("gallary-section");
-                                if (section) {
-                                    section.scrollIntoView({ behavior: "smooth" });
-                                }
-                            }}
-                            className="neon-link"
-                        >
-                            Gallary
-                        </Nav.Link>
-
-                        <Nav.Link
-                            onClick={() => {
-                                const section = document.getElementById("contact-section");
-                                if (section) {
-                                    section.scrollIntoView({ behavior: "smooth" });
-                                }
-                            }}
+                            onClick={handleContactClick}
                             className="neon-link"
                         >
                             Contact
