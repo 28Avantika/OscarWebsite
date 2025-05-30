@@ -27,7 +27,7 @@ const CafeInsights: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen pt-15 bg-black text-white overflow-x-hidden">
+        <div id="about-section" className="min-h-screen pt-15 bg-black text-white overflow-x-hidden">
             <NavBarComp />
             <div className="pt-24 sm:pt-0 md:pt-5"> {/* Added padding-top for mobile */}
                 <h3 className="font-roboto md:text-4xl sm:pb-5 md:pt-10 lg:pt-12 font-bold text-center">Cafe Insights</h3>

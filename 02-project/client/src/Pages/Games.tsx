@@ -2,7 +2,7 @@ import React from "react";
 
 const Games : React.FC = () => {
     return (
-        <div className="bg-black text-white">
+        <div id="gallary-section" className="bg-black text-white">
             <h1> Games Page </h1>
         </div>
     )

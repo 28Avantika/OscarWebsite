@@ -59,10 +59,52 @@ function NavBarComp() {
 
                 <Navbar.Collapse id="navbar-nav" className="">
                     <Nav className="ml-auto">
-                        <Nav.Link href="/insights" className="neon-link">About</Nav.Link>
-                        <Nav.Link href="/menu" className="neon-link">Menu</Nav.Link>
+                        
+                        <Nav.Link
+                            onClick={() => {
+                                const section = document.getElementById("about-section");
+                                if (section) {
+                                    section.scrollIntoView({ behavior: "smooth" });
+                                }
+                            }}
+                            className="neon-link"
+                        >
+                            About
+                        </Nav.Link>
+                        <Nav.Link
+                            onClick={() => {
+                                const section = document.getElementById("zone-section");
+                                if (section) {
+                                    section.scrollIntoView({ behavior: "smooth" });
+                                }
+                            }}
+                            className="neon-link"
+                        >
+                        Menu
+                        </Nav.Link><Nav.Link
+                            onClick={() => {
+                                const section = document.getElementById("zone-section");
+                                if (section) {
+                                    section.scrollIntoView({ behavior: "smooth" });
+                                }
+                            }}
+                            className="neon-link"
+                        >
+                        Games
+                        </Nav.Link>
                         <Nav.Link href="/games" className="neon-link">Gaming</Nav.Link>
-                        <Nav.Link href="/gallary" className="neon-link">Gallary</Nav.Link>
+                        <Nav.Link
+                            onClick={() => {
+                                const section = document.getElementById("gallary-section");
+                                if (section) {
+                                    section.scrollIntoView({ behavior: "smooth" });
+                                }
+                            }}
+                            className="neon-link"
+                        >
+                            Gallary
+                        </Nav.Link>
+
                         <Nav.Link
                             onClick={() => {
                                 const section = document.getElementById("contact-section");
