@@ -92,7 +92,6 @@ function NavBarComp() {
                         >
                             Games
                         </Nav.Link>
-                        <Nav.Link href="/games" className="neon-link">Gaming</Nav.Link>
                         <Nav.Link
                             onClick={() => {
                                 const section = document.getElementById("gallary-section");
