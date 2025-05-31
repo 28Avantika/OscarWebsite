@@ -21,13 +21,13 @@ const HomeSec1: React.FC = () => {
           food, an immersive gaming experience, non-stop entertainment and much more.... </p>
 
           <div className="flex flex-row sm:flex-row gap-4 items-start sm:items-center">
-            <button
+            {/* <button
               className="inline-flex  px-2 py-2 font-bold rounded bg-gradient-to-r from-orange-700 via-amber-500 to-amber-300 hover:opacity-80 transition-all"
               onClick={() => navigate("/games")}
             >
               Book your Game Slot
               <span className="ml-2 text-white animate-slide-arrow">&rarr;</span>
-            </button>
+            </button> */}
 
             <button
               className="relative flex items-center justify-center px-2 py-2 sm:px-6 sm:py-3 rounded text-white font-semibold rounded-lg bg-gradient-to-r from-orange-700 via-amber-500 to-amber-300 hover:opacity-80 transition-all overflow-hidden"

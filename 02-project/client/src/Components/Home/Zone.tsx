@@ -24,13 +24,13 @@ const ResponsiveZoneCards = () => {
       title: "Gaming Zone",
       img: "/images/gaming6.png",
       desc: "PS5, PoolTable, Snooker",
-      onClick: () => navigate("/games"),
+      onClick: () => {},
     },
     {
       title: "Play Zone",
       img: "/images/playing4.png",
       desc: "Chess, Carrom, Jenga, Uno Cards",
-      onClick: () => alert("/games"),
+      onClick: () => {},
     },
   ];
 
