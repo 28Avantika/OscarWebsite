@@ -82,8 +82,8 @@ function NavBarComp() {
                     <Nav className="ml-auto">
                         <Nav.Link as={Link} to="/insights" className="neon-link">About</Nav.Link>
                         <Nav.Link as={Link} to="/menu" className="neon-link">Menu</Nav.Link>
-                        <Nav.Link as={Link} to="/games" className="neon-link">Gaming</Nav.Link>
-                        <Nav.Link as={Link} to="/gallery" className="neon-link">Gallery</Nav.Link>
+                        {/* <Nav.Link as={Link} to="/games" className="neon-link">Gaming</Nav.Link> */}
+                        {/* <Nav.Link as={Link} to="/gallery" className="neon-link">Gallery</Nav.Link> */}
                         <Nav.Link
                             onClick={handleContactClick}
                             className="neon-link"
