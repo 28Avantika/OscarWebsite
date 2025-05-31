@@ -81,7 +81,7 @@ export default function ConfirmOrderModal({
     // Encode message for URL
     const encodedMessage = encodeURIComponent(message);
 
-    window.open(`https://wa.me/9762837188?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/9226547545?text=${encodedMessage}`, '_blank');
 
     console.log("Order confirmed with:", { address, phone, orderDetails });
     setShowConfirmModal(false);

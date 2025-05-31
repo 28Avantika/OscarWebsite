@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import NavBarComp from "../Components/Nav";
 import BackToTopButton from "../Components/BackToTopButton";
-
+import { useNavigate } from "react-router-dom";
 const CafeInsights: React.FC = () => {
+    const navigate = useNavigate();
+
     const slides = [
         { src: "/images/main1.jpeg", alt: "" },
         { src: "/images/2.mp4", alt: "" },
@@ -53,10 +55,14 @@ const CafeInsights: React.FC = () => {
                                     We're Aditya & Avishkar
                                 </h2>
                                 <p className="text-base md:text-lg text-gray-300">
-                                    Two brothers who started this cafe in 2021 with a simple dream — to create
-                                    the perfect place where you can eat, play, work, and chill, anytime you want.
+                                    Founded in 2021 by brothers Aditya & Avishkar, OSCAR was born from a simple dream: 
+                                    to create a space where people could eat, play, work, and chill — anytime, any day.
+                                     Located in the heart of Hinjewadi, we’re more than a cafe; we’re a round-the-clock 
+                                     experience where every bite fuels your game and every game sparks new connections
                                 </p>
-                                <div className="flex justify-center md:justify-start space-x-4">
+                                
+                            </div>
+                            <div className="flex justify-center  md:justify-start space-x-4">
                                     <div className="founder-card text-center group">
                                         <div className="h-32 w-32 md:h-40 md:w-40 rounded-full border-2 border-[#d9dc32] overflow-hidden mx-auto">
                                             <img
@@ -78,26 +84,15 @@ const CafeInsights: React.FC = () => {
                                         <p className="mt-2 text-[#d9dc32]">Avishkar</p>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="hidden sm:block relative mt-8 md:mt-0">
-                                <div className="absolute-inset-2 md:-inset-4 border-2 border-[#d9dc32] rounded-lg rotate-3"></div>
-                                <img
-                                    src="/images/a2.jpeg"
-                                    alt="Cafe Interior"
-                                    className="relative rounded-lg shadow-2xl w-full transform hover:rotate-1 transition duration-500"
-                                />
-                            </div>
                         </div>
                     </div>
                 </section>
 
                 {/* Photo Gallery / Virtual Tour */}
                 <section className="container mx-auto px-4 py-10">
-
                     <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-center">
                         Moments from Our Zone
                     </h2>
-                    <h6 className="text-center"> Swipe to see more of <span className="text-xl md:text-2xl font-bold mb-4 md:mb-6"> Oscar's Cafe </span></h6>
                     <div className="relative w-full md:w-3/4 mx-auto my-6 md:my-10">
                         <div className="relative h-64 md:h-80">
                             {slides.map((slide, index) => (
@@ -152,51 +147,47 @@ const CafeInsights: React.FC = () => {
                             </button>
                         </div>
                     </div>
+                    <h6 className="text-center"> Click to see more of <span className="text-xl md:text-2xl font-bold mb-4 md:mb-6"> Oscar's Cafe </span></h6>
+                    <button
+                        onClick={() => navigate("/gallary")}
+                        className="flex flex-row px-4 py-2 font-bold rounded bg-gradient-to-r from-orange-700 via-amber-500 to-amber-300 hover:opacity-80 transition-all mx-auto my-4"
+                    >
+                        Gallery
+                        <span className="ml-2 text-white animate-slide-arrow">&rarr;</span>
+                    </button>
                 </section>
 
                 {/* Stats / Highlights */}
-                <section className="w-full py-10 md:py-20 px-4 relative bg-[url('/images/bg-journey.avif')] bg-cover bg-center bg-no-repeat">
-                    <div className="container mx-auto">
-                        <h2 className="text-2xl md:text-4xl font-bold mb-6 md:mb-8 text-center">
-                            From Zero to Now: By The Numbers                        </h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 text-center">
-                            <div className="py-3 px-2 md:py-4 md:px-2 hover:bg-pink-900 hover:cursor-pointer rounded-sm transition-all duration-300">
-                                <p className="text-3xl md:text-5xl font-extrabold text-yellow-400">3000+</p>
-                                <p className="mt-1 md:mt-2 text-sm md:text-lg">Games Played</p>
-                            </div>
-                            <div className="py-3 px-2 md:py-4 md:px-2 hover:bg-pink-900 hover:cursor-pointer rounded-sm transition-all duration-300">
-                                <p className="text-3xl md:text-5xl font-extrabold text-yellow-400">1000+</p>
-                                <p className="mt-1 md:mt-2 text-sm md:text-lg">Happy Customers</p>
-                            </div>
-                            <div className="py-3 px-2 md:py-4 md:px-2 hover:bg-pink-900 hover:cursor-pointer rounded-sm transition-all duration-300">
-                                <p className="text-3xl md:text-5xl font-extrabold text-yellow-400">24/7</p>
-                                <p className="mt-1 md:mt-2 text-sm md:text-lg">Open Since Day 1</p>
-                            </div>
+                <section className="w-full py-10 md:py-20 px-4 relative">
+                    <div className="container mx-auto px-4">
+                        <h2 className="text-xl md:text-3xl font-bold py-4 md:py-6 text-center text-gray-200">
+                            Our Journey in Numbers
+                        </h2>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-5 text-center">
+                            {[
+                                { value: "3000+", label: "Games Played" },
+                                { value: "1000+", label: "Happy Customers" },
+                                { value: "24/7", label: "Open Since Day 1" }
+                            ].map((item, index) => (
+                                <div
+                                    key={index}
+                                    className="py-3 px-4 md:py-4 hover:bg-pink-900/50 hover:scale-[1.02] cursor-pointer  rounded-md transition-all duration-300 hover:border-yellow-400"
+                                >
+                                    <p className="text-2xl md:text-4xl font-extrabold text-yellow-400">
+                                        {item.value}
+                                    </p>
+                                    <p className="mt-1 text-xs md:text-sm text-gray-300">
+                                        {item.label}
+                                    </p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>
 
                 {/* CTA Section: Visit Us */}
-                <section className="container mx-auto px-4 py-10">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Visit Us @</h2>
-                    <address className="not-italic text-center text-gray-200 text-sm md:text-base leading-relaxed mb-6">
-                        Oscar Food Park, Laxmi Chowk,
-                        Near Yash Wines, Opp. to Sairat Biryani,
-                        Phase 1, Hinjewadi, Pune - 411057
-                    </address>
-                    <div className="flex justify-center">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.4298536577385!2d73.7322147!3d18.5997259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bb17195302e9%3A0xef4528bd0ab4c1d!2sThe%20Oscar%20Pool%20And%20Snooker!5e0!3m2!1sen!2sin!4v1747135748713!5m2!1sen!2sin"
-                            width="600"
-                            height="450"
-                            style={{ border: 0 }}
-                            allowFullScreen
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            className="rounded-lg shadow-lg border-2 border-yellow-400 w-full h-64 sm:h-80 md:h-96 lg:h-[400px]"
-                        ></iframe>
-                    </div>
-                </section>
+
             </div>
             <BackToTopButton />
         </div>
