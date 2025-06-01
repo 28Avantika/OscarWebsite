@@ -1,5 +1,89 @@
-import React from "react";
+import React, {useState} from "react";
+import { db } from "../firebase";
+import { addDoc, collection } from "firebase/firestore";
+
+interface FormData{
+    name:string;
+    phone:string;
+    message:string;
+};
+
+const sendTelegramNotification = async (orderData: {
+  name: string;
+  phone: string;
+  message: string;
+}) => {
+  const botToken = "7997849403:AAHdtIQWUe8CflhhJne91SfCXOZxOMWxA2o"; // From BotFather
+  const chatId = "1465248926"; // From userinfobot
+
+  const message = `🚨 *New Query from ContactForm of Oscar's Website*
+
+👤 *Name:* ${orderData.name}
+📞 *Phone:* ${orderData.phone}
+📝 *User Message:* ${orderData.message}
+🕒 Time: ${new Date().toLocaleString()}`;
+
+  const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+        parse_mode: "Markdown",
+      }),
+    });
+
+    const data = await res.json();
+    if (!data.ok) throw new Error("Failed to send message");
+    //console.log("Telegram notification sent");
+  } catch (err) {
+    console.error("Telegram error:", err);
+  }
+};
+
+
 const ContactForm: React.FC = () => {
+
+    const [formData, setFormData] = useState<FormData>({
+    name: '',
+    phone:  "",
+    message: '',
+  });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const docRef = await addDoc(collection(db, "onlineQueries"), formData);
+     //console.log("A Query has been submitted with ID: ",docRef.id) 
+      // Reset form after successful submission
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    }
+
+    await sendTelegramNotification({
+        name:formData.name,
+        phone:formData.phone,
+        message: formData.message,
+    })
+    // Reset form after successful submission
+      setFormData({name: '',phone: '',message: ''});
+
+  };
+
+
     return (
         <section id="contact-section" className="bg-black min-h-screen px-4 py-10 flex flex-col items-center justify-center text-white">
             {/* Main Title */}
@@ -49,12 +133,6 @@ const ContactForm: React.FC = () => {
                         </div>
                       
 
-
-
-                        {/* Phone */}
-
-                        {/* Email */}
-
                     </div>
                 </div>
 
@@ -63,12 +141,17 @@ const ContactForm: React.FC = () => {
                     <h5 className="text-2xl font-bold text-yellow-300 pb-4 mb-6 text-center">
                         Having Trouble Booking? Shoot Us a Message! 🚀
                     </h5>
-                    <form className="space-y-4 ">
+                    <form id="contact-form" onSubmit={handleSubmit} className="space-y-4 ">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label className="block text-yellow-200 text-sm mb-1">Your Name</label>
                                 <input
                                     type="text"
+                                    id="userName"
+                                    name="name"
+                                    required
+                                    value={formData.name}
+                                    onChange={handleChange}
                                     placeholder="Enter your name"
                                     className="w-full px-4 py-2 bg-gray-800 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-300"
                                 />
@@ -77,6 +160,12 @@ const ContactForm: React.FC = () => {
                                 <label className="block text-yellow-200 text-sm mb-1">Your Mobile No</label>
                                 <input
                                     type="tel"
+                                    id="userPhone"
+                                    name="phone"
+                                    maxLength={10}
+                                    required
+                                    value={formData.phone}
+                                    onChange={handleChange}
                                     placeholder="Enter your number"
                                     className="w-full px-4 py-2 bg-gray-800 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-300"
                                 />
@@ -86,6 +175,11 @@ const ContactForm: React.FC = () => {
                             <label className="block text-amber-200 text-sm mb-1">Your Message</label>
                             <textarea
                                 rows={4}
+                                id="userMessage"
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                required
                                 placeholder="Type your message here..."
                                 className="w-full px-4 py-2 mb-3 bg-gray-800 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-300"
                             />
