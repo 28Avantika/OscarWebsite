@@ -343,7 +343,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 1102,
         "subcategory_name": "STARTER",
-        "image": "/images/abouBg.avif",
+        "image": "/images/menuItems/noodles.png",
         "options": [
           {"id": 11021, "name": "Mushroom Chilli", "half": "-", "full": "120"},
           {"id": 11022, "name": "Manchurian Dry", "half": "-", "full": "120"},
@@ -356,7 +356,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 1103,
         "subcategory_name": "RICE",
-        "image": "/images/abouBg.avif",
+        "image": "/images/menuItems/noodles.png",
         "options": [
           {"id": 11031, "name": "Veg fried rice", "half": "90", "full": "130"},
           {"id": 11032, "name": "Shejwan fried rice", "half": "100", "full": "140"},
@@ -370,7 +370,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 1104,
         "subcategory_name": "MAGGIE",
-        "image": "/images/abouBg.avif",
+        "image": "/images/menuItems/noodles.png",
         "options": [
           {"id": 11041, "name": "Plain maggie", "half": "-", "full": "60"},
           {"id": 11042, "name": "Plain cheese Maggie", "half": "-", "full": "70"},
@@ -385,7 +385,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 1105,
         "subcategory_name": "CHOWPSY CHOWPSY",
-        "image": "/images/abouBg.avif",
+        "image": "/images/menuItems/noodles.png",
         "options": [
           {"id": 11051, "name": "American", "half": "-", "full": "120"},
           {"id": 11052, "name": "Shejwan", "half": "-", "full": "120"},
@@ -395,7 +395,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 1106,
         "subcategory_name": "NOODLES",
-        "image": "/images/abouBg.avif",
+        "image": "/images/menuItems/noodles.png",
         "options": [
           {"id": 11061, "name": "Hakka noodle", "half": "90", "full": "130"},
           {"id": 11062, "name": "Shejwan noodle", "half": "100", "full": "140"},
