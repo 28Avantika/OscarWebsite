@@ -407,7 +407,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 1107,
         "subcategory_name": "BHURJI",
-        "image": "/images/bhurji-banner.jpg",
+        "image": "/images/menuItems/noodles.png",
         "options": [
           {"id": 11071, "name": "Anda Bhurji", "half": "-", "full": "80"},
           {"id": 11072, "name": "Egg Omelette", "half": "-", "full": "40"},

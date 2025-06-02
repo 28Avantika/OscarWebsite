@@ -44,7 +44,7 @@ export default function LoginForm({ onSwitchToSignup }: LoginFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className=" text-sm space-y-4">
+    <form onSubmit={handleSubmit} className="text-sm space-y-4">
       {error && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
           {error}
@@ -56,7 +56,7 @@ export default function LoginForm({ onSwitchToSignup }: LoginFormProps) {
           type="button"
           onClick={handleGoogleSignIn}
           disabled={isGoogleLoading}
-          className="w-full flex items-center justify-center gap-2 bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
+          className="w-full flex items-center  bg-green-800 r justify-center gap-2 text-white rounded-md shadow-sm py-2 px-4 focus:outline-none"
         >
           {isGoogleLoading ? (
             'Signing in...'
@@ -77,9 +77,6 @@ export default function LoginForm({ onSwitchToSignup }: LoginFormProps) {
       </div>
 
       <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <div className="w-full border-t border-gray-300" />
-        </div>
         <div className="relative flex justify-center text-sm">
           <p className="px-2 text-white-500">Or continue with</p>
         </div>
@@ -95,7 +92,7 @@ export default function LoginForm({ onSwitchToSignup }: LoginFormProps) {
           value={email}
           placeholder='Enter Email'
           onChange={(e) => setEmail(e.target.value)}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border"
+          className="mt-1 block w-full focus:outline-none  border-l border-yellow-200 p-2"
           required
         />
       </div>
@@ -110,7 +107,7 @@ export default function LoginForm({ onSwitchToSignup }: LoginFormProps) {
           placeholder='Enter password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border"
+          className="mt-1 block w-full focus:outline-none  border-l border-yellow-200 p-2"
           required
         />
       </div>
@@ -119,7 +116,7 @@ export default function LoginForm({ onSwitchToSignup }: LoginFormProps) {
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full bg-[#d9dc32] hover:bg-amber-400 text-gray-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:opacity-50"
+          className="w-full  font-bold py-2 px-4 bg-blue-900 rounded focus:outline-none disabled:opacity-50"
         >
           {isLoading ? 'Logging in...' : 'Login'}
         </button>
@@ -129,7 +126,7 @@ export default function LoginForm({ onSwitchToSignup }: LoginFormProps) {
         <button
           type="button"
           onClick={onSwitchToSignup}
-          className="text-white-600 hover:text-amber-400"
+          className="text-white"
         >
           Don't have an account? Sign up
         </button>

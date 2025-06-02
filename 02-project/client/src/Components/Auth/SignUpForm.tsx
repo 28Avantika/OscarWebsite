@@ -53,7 +53,8 @@ export default function SignupForm({ onSwitchToLogin }: SignupFormProps) {
   
 
   return (
-    <form onSubmit={handleSubmit} className="text-sm space-y-4">
+    <form 
+     onSubmit={handleSubmit} className="text-sm space-y-4">
       {error && (
          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
           {error}
@@ -65,7 +66,7 @@ export default function SignupForm({ onSwitchToLogin }: SignupFormProps) {
           type="button"
           onClick={handleGoogleSignIn}
           disabled={isGoogleLoading}
-          className="w-full flex items-center justify-center gap-2 bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
+          className="w-full flex items-center justify-center gap-2 bg-green-800 rounded py-2 px-4 text-sm text-white focus:outline-none"
         >
           {isGoogleLoading ? (
             'Signing up...'
@@ -86,9 +87,6 @@ export default function SignupForm({ onSwitchToLogin }: SignupFormProps) {
       </div>
 
       <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <div className="w-full border-t border-gray-300" />
-        </div>
         <div className="relative flex justify-center text-sm">
           <p className="px-2 text-white-500">Or sign up with email</p>
         </div>
@@ -105,7 +103,7 @@ export default function SignupForm({ onSwitchToLogin }: SignupFormProps) {
           placeholder='Enter email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border"
+          className="mt-1 block w-full focus:outline-none  border-l border-yellow-200 p-2"
           required
         />
       </div>
@@ -120,7 +118,7 @@ export default function SignupForm({ onSwitchToLogin }: SignupFormProps) {
           placeholder='Enter password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border"
+          className="mt-1 block w-full focus:outline-none  border-l border-yellow-200 p-2"
           required
           minLength={6}
         />
@@ -136,7 +134,7 @@ export default function SignupForm({ onSwitchToLogin }: SignupFormProps) {
           id="confirmPassword"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border"
+          className="mt-1 block w-full focus:outline-none  border-l border-yellow-200 p-2"
           required
           minLength={6}
         />
@@ -146,7 +144,7 @@ export default function SignupForm({ onSwitchToLogin }: SignupFormProps) {
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full bg-[#d9dc32] hover:bg-amber-400 text-gray-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:opacity-50"
+          className="w-full font-bold py-2 px-4 bg-blue-900 rounded focus:outline-none disabled:opacity-50"
         >
           {isLoading ? 'Creating account...' : 'Sign Up'}
         </button>
@@ -156,7 +154,7 @@ export default function SignupForm({ onSwitchToLogin }: SignupFormProps) {
         <button
           type="button"
           onClick={onSwitchToLogin}
-          className="text-white-600 hover:text-amber-400"
+          className="text-white"
         >
           Already have an account? Login
         </button>
