@@ -10,8 +10,7 @@ import { useAuth } from '../../context/AuthContext';
 import { useCart } from '../../context/CartContext';
 
 export default function MenuItems() {
-
-   const { user } = useAuth();
+  const { user } = useAuth();
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [activeCategory, setActiveCategory] = useState(menuData[0].category_name);
   const [showPortionModal, setShowPortionModal] = useState(false);
@@ -22,7 +21,7 @@ export default function MenuItems() {
     subcategory: string;
   }>(null);
 
-   const {
+  const {
     cart,
     addToCart,
     removeFromCart,
@@ -38,20 +37,19 @@ export default function MenuItems() {
     }
   };
 
-const handleConfirmOrder = async () => {
-};
+  const handleConfirmOrder = async () => { };
 
   return (
     <>
-      <div className="min-h-screen py-30 bg-gray-50">
+      <div className="min-h-screen py-30 bg-black text-white">
         {/* Category Slider */}
         <div className="flex overflow-x-auto custom-scrollbar gap-2 pb-2 px-4">
           {menuData.map(category => (
             <button
               key={category.category_id}
-              className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors ${activeCategory === category.category_name
-                ? 'bg-amber-600 text-white'
-                : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+              className={`px-4 py-2 rounded whitespace-nowrap transition-colors ${activeCategory === category.category_name
+                ? 'rounded text-semobold bg-gradient-to-r from-orange-700 via-amber-500 to-amber-500 hover:opacity-80'
+                : 'bg-black text-white hover:bg-gray-200'
                 }`}
               onClick={() => setActiveCategory(category.category_name)}
             >
@@ -61,7 +59,7 @@ const handleConfirmOrder = async () => {
         </div>
 
         {/* Content */}
-        <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row gap-6">
+        <div className="container mx-auto  px-4 py-6 flex flex-col md:flex-row gap-6">
           {/* Menu Items */}
           <div className="flex-1">
             {menuData.map(category => (
@@ -69,57 +67,45 @@ const handleConfirmOrder = async () => {
                 key={category.category_id}
                 className={`${activeCategory === category.category_name ? 'block' : 'hidden'}`}
               >
-                <h2 className="text-xl font-bold text-gray-800 mb-4">
+                <h2 className="text-xl font-bold text-gray-200 mb-4">
                   <span className="mr-2">{category.icon}</span>
                   {category.category_name}
                 </h2>
 
-                {category.items.map((subcategory) => (
+                {category.items.map(subcategory => (
                   <div key={subcategory.subcategory_id} className="mb-8">
                     {category.items.length > 1 ? (
-                      // Show all subcategories as collapsible when there are multiple
-                      <div>
+                      <>
+                        {/* Expandable Section */}
                         <button
                           onClick={() => {
                             const newExpanded = { ...expandedSubcategories };
                             newExpanded[subcategory.subcategory_id] = !newExpanded[subcategory.subcategory_id];
                             setExpandedSubcategories(newExpanded);
                           }}
-                          className="text-m font-semibold text-gray-700 mb-3 flex items-center"
+                          className="text-m font-semibold text-gray-300 mb-3 flex items-center"
                         >
                           {subcategory.subcategory_name}
-                          <svg
-                            className={`ml-2 h-4 w-4 transition-transform ${expandedSubcategories[subcategory.subcategory_id] ? 'rotate-180' : ''
-                              }`}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                          </svg>
+                          
                         </button>
 
                         {expandedSubcategories[subcategory.subcategory_id] && (
-                          <div className="space-y-3">
+                          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                             {subcategory.options.map(item => (
                               <div
                                 key={item.id}
-                                className="bg-white rounded-lg shadow-sm p-4 flex justify-between items-center"
+                                className="bg-[#1a1a1a] flex flex-col justify-between rounded-lg shadow-sm p-4"
                               >
                                 <div>
-                                  <h5 className="font-medium text-gray-800">{item.name}</h5>
-                                  <div className="flex gap-4 mt-1">
-                                    {item.full && (
-                                      <p className="text-sm text-[#d9dc32]-400 text-gray-600">Full: ₹{item.full}</p>
-                                    )}
-                                    {item.half && item.half !== '-' && (
-                                      <p className="text-sm text-gray-600">Half: ₹{item.half}</p>
-                                    )}
+                                  <p className="text-yellow-500">{item.name}</p>
+                                  <div className="flex gap-4 mt-1 text-gray-300">
+                                    {item.full && <p className="text-sm">Full ₹{item.full}</p>}
+                                    {item.half && item.half !== '-' && <p className="text-sm">Half ₹{item.half}</p>}
                                   </div>
                                 </div>
                                 <button
                                   onClick={() => handleAddClick(item, subcategory.subcategory_name)}
-                                  className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-md text-sm font-medium"
+                                  className="mt-4 rounded font-semibold bg-gradient-to-r from-orange-700 via-amber-500 to-amber-500 hover:opacity-80 text-white px-3 py-2"
                                 >
                                   Add
                                 </button>
@@ -127,33 +113,29 @@ const handleConfirmOrder = async () => {
                             ))}
                           </div>
                         )}
-                      </div>
+                      </>
                     ) : (
-                      // Show as normal when only one subcategory exists
                       <>
-                        <h3 className="text-m font-semibold text-gray-700 mb-3">
+                        {/* Direct Grid Display */}
+                        <h3 className="text-m font-semibold text-gray-300 mb-3">
                           {subcategory.subcategory_name}
                         </h3>
-                        <div className="space-y-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                           {subcategory.options.map(item => (
                             <div
                               key={item.id}
-                              className="bg-white rounded-lg shadow-sm p-4 flex justify-between items-center"
+                              className="bg-[#1a1a1a] flex flex-col justify-between rounded-lg shadow-sm p-4"
                             >
                               <div>
-                                <h5 className="font-medium text-gray-800">{item.name}</h5>
-                                <div className="flex gap-4 mt-1">
-                                  {item.full && (
-                                    <p className="text-sm text-[#d9dc32]-400 text-gray-600">Full: ₹{item.full}</p>
-                                  )}
-                                  {item.half && item.half !== '-' && (
-                                    <p className="text-sm text-gray-600">Half: ₹{item.half}</p>
-                                  )}
+                                <h5 className="font-medium text-white">{item.name}</h5>
+                                <div className="flex gap-4 mt-1 text-yellow-100">
+                                  {item.full && <p className="text-sm">Full ₹<b>{item.full}</b></p>}
+                                  {item.half && item.half !== '-' && <p className="text-sm">Half ₹<b>{item.half}</b></p>}
                                 </div>
                               </div>
                               <button
                                 onClick={() => handleAddClick(item, subcategory.subcategory_name)}
-                                className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-md text-sm font-medium"
+                                className="mt-4 rounded font-semibold bg-gradient-to-r from-orange-700 via-amber-500 to-amber-500 hover:opacity-80 text-white px-3 py-2"
                               >
                                 Add
                               </button>
@@ -167,6 +149,8 @@ const handleConfirmOrder = async () => {
               </div>
             ))}
           </div>
+
+
           {/* Order Summary */}
           <div className="hidden md:block md:w-80">
             <OrderSummary
@@ -175,12 +159,9 @@ const handleConfirmOrder = async () => {
               onUpdateQuantity={updateQuantity}
               onProceedToPay={() => {
                 setShowConfirmModal(true);
-              }} 
-              isAuthenticated={false} 
-              cafeLocation={{
-                lat: 0,
-                lng: 0
-              }} 
+              }}
+              isAuthenticated={false}
+              cafeLocation={{ lat: 0, lng: 0 }}
             />
           </div>
         </div>
@@ -210,10 +191,10 @@ const handleConfirmOrder = async () => {
           onProceedToPay={() => {
             setShowMobileCart(false);
             setShowConfirmModal(true);
-          } } isAuthenticated={false} cafeLocation={{
-            lat: 0,
-            lng: 0
-          }}/>
+          }}
+          isAuthenticated={false}
+          cafeLocation={{ lat: 0, lng: 0 }}
+        />
 
         {/* Portion Selection Modal */}
         {selectedItem && (
@@ -232,17 +213,14 @@ const handleConfirmOrder = async () => {
 
         {/* Confirm Order Modal */}
         <ConfirmOrderModal
-         isOpen={showConfirmModal}
+          isOpen={showConfirmModal}
           onClose={() => setShowConfirmModal(false)}
           cart={cart}
-          onConfirm={handleConfirmOrder }
+          onConfirm={handleConfirmOrder}
           userId={user?.uid || null}
           customerName={user?.displayName || user?.email || null}
-          
         />
       </div>
     </>
   );
 }
-
-

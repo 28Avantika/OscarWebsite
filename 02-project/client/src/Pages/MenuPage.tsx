@@ -18,15 +18,11 @@ const menuItems = [
   { title: "Egg Rice", img: "/images/menuItems/eggRice.png" },
   { title: "Noodles", img: "/images/menuItems/noodles.png" },
   { title: "Toast", img: "/images/menuItems/toast.png" },
-
-
-
 ];
 
 const MenuPage: React.FC = () => {
   const navigate = useNavigate();
   
-
   return (
 
     <div className="bg-black text-white">

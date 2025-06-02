@@ -99,7 +99,7 @@ const MobileCartDrawer: React.FC<Props> = ({
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'tween', ease: 'easeInOut' }}
-              className="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-white z-50 shadow-xl"
+              className="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-black z-50 shadow-xl"
             >
               <div className="absolute top-4 right-4">
                 <button

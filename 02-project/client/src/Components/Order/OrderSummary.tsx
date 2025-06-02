@@ -18,7 +18,7 @@ export default function OrderSummary({
   onProceedToPay
 }: OrderSummaryProps) {
   const subtotal = cart.reduce((sum, item) => sum + (parseFloat(item.price) * item.quantity), 0);
-  const gst = subtotal * 0.18;
+  const gst = subtotal * 0;
   const total = subtotal + gst;
 
   const handleProceedToPay = () => {
@@ -35,45 +35,45 @@ export default function OrderSummary({
   };
 
   return (
-    <div className="w-full md:w-80 bg-white p-4 rounded-lg shadow-md border border-gray-200">
+    <div className="w-full md:w-80 bg-black mt-20 p-4 rounded-lg shadow-md border-l border-yellow-500">
       <h3 className="text-xl font-bold mb-4">Your Order</h3>
       
       {cart.length === 0 ? (
-        <p className="text-gray-500">Your cart is empty</p>
+        <p className="text-yellow-200">Your cart is empty</p>
       ) : (
         <>
           <div className="space-y-3 max-h-96 overflow-y-auto custom-scrollbar">
             {cart.map(item => (
-              <div key={item.id} className="border-b border-gray-100 pb-3">
+              <div key={item.id} className="border-b border-orange-200 pb-3">
                 <div className="flex justify-between">
                   <div>
                     <h6 className="font-medium">{item.name}</h6>
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-yellow-200">
                       {item.portion === 'half' ? 'Half' : 'Full'} • {item.subcategory}
                     </p>
                   </div>
-                  <h6 className="font-bold">₹{item.price}</h6>
+                  <h6 className="text-yellow-200">₹{item.price}</h6>
                 </div>
                 
                 <div className="flex text-xs items-center justify-between mt-2">
-                  <div className="flex items-center border border-gray-200 rounded-md">
+                  <div className="flex items-center rounded-md">
                     <button 
                       onClick={() => onUpdateQuantity(item.id, item.quantity - 1)}
-                      className="px-2 py-1 text-gray-600 hover:bg-gray-100"
+                      className="px-2 py-1 text-yellow-200 hover:bg-yellow-900"
                     >
                       -
                     </button>
-                    <span className="text-black text-xs px-2">{item.quantity}</span>
+                    <span className="text-yellow-200 text-xs px-2">{item.quantity}</span>
                     <button 
                       onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}
-                      className="px-2 py-1 text-gray-600 hover:bg-gray-100"
+                      className="px-2 py-1 text-yellow-200 hover:bg-gray-100"
                     >
                       +
                     </button>
                   </div>
                   <button 
                     onClick={() => onRemove(item.id)}
-                    className="text-red-500 text-xs"
+                    className=" text-red-300 text-xs"
                   >
                     Remove
                   </button>
@@ -82,15 +82,8 @@ export default function OrderSummary({
             ))}
           </div>
 
-          <div className="mt-4 text-black border-t border-gray-200 pt-4">
-            <div className="flex text-black justify-between mb-1">
-              <h6>Subtotal:</h6>
-              <h6>₹{subtotal.toFixed(2)}</h6>
-            </div>
-            <div className="flex text-black justify-between mb-1">
-              <h6>GST (18%):</h6>
-              <h6>₹{gst.toFixed(2)}</h6>
-            </div>
+          <div className="mt-4 text-yellow-200 pt-4">
+      
             <div className="flex justify-between font-bold mt-3">
               <h6>Total:</h6>
               <h6>₹{total.toFixed(2)}</h6>
@@ -98,7 +91,7 @@ export default function OrderSummary({
 
             <button
               onClick={handleProceedToPay}
-              className="w-full mt-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-md font-medium"
+              className="w-full mt-4 rounded font-semibold bg-gradient-to-r from-orange-700 via-amber-500 to-amber-500 hover:opacity-80 text-white px-3 py-2"
               disabled={cart.length === 0}
             >
               Proceed to Pay
