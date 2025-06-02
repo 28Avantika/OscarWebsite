@@ -68,14 +68,12 @@ export default function ConfirmOrderModal({
     ).join('\n');
 
     // Create WhatsApp message
-    const message = `My order details:🎉\n\n` +
+     const message = `My Order at *Oscar cafe and Gaming Zone*\n\n` +
       `*Order Summary:*\n${orderSummary}\n\n` +
-      `*Subtotal:* ₹${orderDetails.subtotal.toFixed(2)}\n` +
-      `*GST (18%):* ₹${orderDetails.gst.toFixed(2)}\n` +
       `*Total:* ₹${orderDetails.total.toFixed(2)}\n\n` +
-      `*Delivery Address:* ${address}\n` +
-      `*Contact Number:* ${phone}\n\n` +
-      `Please confirm this order and go ahead with further process`;
+      `*Delivery Address:* \n ${address}\n\n` +
+      `*Contact Number:*\n ${phone}\n\n` +
+      `My Order is confirmed. Guide me with Payment Process`;
 
     // Encode message for URL
     const encodedMessage = encodeURIComponent(message);

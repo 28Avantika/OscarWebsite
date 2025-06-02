@@ -53,20 +53,17 @@ const MobileCartDrawer: React.FC<Props> = ({
     ).join('\n');
 
     // Create WhatsApp message
-    const message = `Thank you for your order! 🎉\n\n` +
+    const message = `My Order at *Oscar cafe and Gaming Zone*\n\n` +
       `*Order Summary:*\n${orderSummary}\n\n` +
-      `*Subtotal:* ₹${orderDetails.subtotal.toFixed(2)}\n` +
-      `*GST (18%):* ₹${orderDetails.gst.toFixed(2)}\n` +
       `*Total:* ₹${orderDetails.total.toFixed(2)}\n\n` +
-      `*Delivery Address:* ${address}\n` +
-      `*Contact Number:* ${phone}\n\n` +
-      `Please confirm this order and proceed with payment. ` +
-      `Our team will contact you shortly for delivery details.`;
+      `*Delivery Address:* \n ${address}\n\n` +
+      `*Contact Number:*\n ${phone}\n\n` +
+      `My Order is confirmed. Guide me with Payment Process`;
 
     // Encode message for URL
     const encodedMessage = encodeURIComponent(message);
 
-    window.open(`https://wa.me/9762837188?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/9226547545?text=${encodedMessage}`, '_blank');
 
     console.log("Order confirmed with:", { address, phone, orderDetails });
     setShowConfirmModal(false);
