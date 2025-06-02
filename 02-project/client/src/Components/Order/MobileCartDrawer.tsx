@@ -145,10 +145,9 @@ const MobileCartDrawer: React.FC<Props> = ({
                 </svg>
               </div>
               <h3 className="text-lg font-medium mb-2">Order Confirmed!</h3>
-              <p className="text-gray-600 mb-4">
-                We've sent the order details to your WhatsApp. Please check your messages
-                and confirm the order with payment details there.
-              </p>
+              <p className='text-xs pt-2 animate-pulse text-center'>
+                You will be redirected to WhatsApp with a prefilled message.
+                Please <b>SEND</b> it to confirm your order and payment details.</p>
               <button
                 onClick={() => {
                   setShowConfirmationUI(false);

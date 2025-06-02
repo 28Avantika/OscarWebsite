@@ -52,7 +52,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 201,
         "subcategory_name": "Veg Burger",
-        "image": "/images/abouBg.avif",
+        "image": "/images/menuItems/burger.png",
         "options": [
           {"id": 2011, "name": "Veg Burger", "half": "-", "full": "80"},
           {"id": 2012, "name": "Veg Cheese Burger", "half": "-", "full": "90"},
@@ -76,7 +76,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 301,
         "subcategory_name": "Cheese Pizza",
-        "image": "/images/abouBg.avif",
+        "image": "/images/menuItems/pizza.png",
         "options": [
           {"id": 3011, "name": "Cheese Pizza", "half": "100", "full": "170"},
           {"id": 3012, "name": "Double Cheese Pizza", "half": "130", "full": "210"},
@@ -115,7 +115,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 401,
         "subcategory_name": "Hot Drinks",
-        "image": "/images/abouBg.avif",
+        "image": "/images/menuItems/hotCoffee.png",
         "options": [
           {"id": 4011, "name": "Hot Coffee", "half": "-", "full": "30"},
           {"id": 4012, "name": "Hot chocolate", "half": "-", "full": "30"},
@@ -133,7 +133,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 501,
         "subcategory_name": "Fried Items",
-        "image": "/images/abouBg.avif",
+        "image": "/images/menuItems/fries.png",
         "options": [
           {"id": 5011, "name": "Salted French Fries", "half": "-", "full": "80"},
           {"id": 5012, "name": "Peri Peri Fries", "half": "-", "full": "90"},
@@ -159,7 +159,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 601,
         "subcategory_name": "Virgin Mojito",
-        "image": "/images/abouBg.avif",
+        "image": "/images/menuItems/mojito.png",
         "options": [
           {"id": 6011, "name": "Virgin Mojito", "half": "-", "full": "70"},
           {"id": 6012, "name": "Green Apple", "half": "-", "full": "70"},
@@ -181,7 +181,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 701,
         "subcategory_name": "Pasta Varieties",
-        "image": "/images/abouBg.avif",
+        "image": "/images/menuItems/pasta.png",
         "options": [
           {"id": 7011, "name": "White sauce pasta", "half": "-", "full": "120"},
           {"id": 7012, "name": "Red sauce pasta", "half": "-", "full": "130"},
@@ -201,7 +201,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 801,
         "subcategory_name": "Cheese Toasts",
-        "image": "/images/abouBg.avif",
+        "image": "/images/menuItems/toast.png",
         "options": [
           {"id": 8011, "name": "Plain Cheese Toast", "half": "-", "full": "80"},
           {"id": 8012, "name": "Cheese Chilli Toast", "half": "-", "full": "90"},
@@ -224,7 +224,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 901,
         "subcategory_name": "4-LAYER JUMBO SANDWICHES",
-        "image": "/images/abouBg.avif",
+        "image": "/images/menuItems/sandwich.png",
         "options": [
           {"id": 9011, "name": "Veg Cheese Jumbo Grill", "half": "-", "full": "120"},
           {"id": 9012, "name": "Cheese Corn Jumbo Grill", "half": "-", "full": "120"},
@@ -238,7 +238,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 902,
         "subcategory_name": "REGULAR SANDWICHES",
-        "image": "/images/abouBg.avif",
+        "image": "/images/menuItems/sandwich.png",
         "options": [
           {"id": 9021, "name": "Bread Jam", "half": "-", "full": "40"},
           {"id": 9022, "name": "Plain Cheese Sandwich", "half": "-", "full": "60"},
@@ -251,7 +251,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 903,
         "subcategory_name": "3-LAYER GRILL SANDWICHES",
-        "image": "/images/abouBg.avif",
+        "image": "/images/menuItems/sandwich.png",
         "options": [
           {"id": 9031, "name": "Veg Grill Sandwich", "half": "-", "full": "80"},
           {"id": 9032, "name": "Veg Cheese Grill", "half": "-", "full": "90"},
@@ -289,7 +289,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 1001,
         "subcategory_name": "SPECIAL SANDWICH",
-        "image": "/images/abouBg.avif",
+        "image": "/images/menuItems/sandwich.png",
         "options": [
           {"id": 10011, "name": "Oscar special grill", "half": "-", "full": "130"},
           {"id": 10012, "name": "Cheese mexican grill", "half": "-", "full": "120"},
@@ -303,7 +303,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 1002,
         "subcategory_name": "SPECIAL PIZZA",
-        "image": "/images/abouBg.avif",
+        "image": "images/menuItems/pizza.png",
         "options": [
           {"id": 10021, "name": "Oscar special pizza", "half": "130", "full": "210"},
           {"id": 10022, "name": "Peri peri paneer pizza", "half": "150", "full": "250"},
@@ -315,7 +315,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 1003,
         "subcategory_name": "SPECIAL BURGER",
-        "image": "/images/abouBg.avif",
+        "image": "/images/menuItems/burger.png",
         "options": [
           {"id": 10031, "name": "Oscar Special burger", "half": "-", "full": "130"},
           {"id": 10032, "name": "Special cheese tandoor burger", "half": "-", "full": "150"},
@@ -332,7 +332,7 @@ export const menuData: MenuCategory[] = [
       {
         "subcategory_id": 1101,
         "subcategory_name": "SOUP",
-        "image": "/images/abouBg.avif",
+        "image": "/images/menuItems/noodles.png",
         "options": [
           {"id": 11011, "name": "Veg manchow", "half": "-", "full": "80"},
           {"id": 11012, "name": "Veg clear soup", "half": "-", "full": "80"},

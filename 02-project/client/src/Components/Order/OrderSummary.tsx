@@ -35,7 +35,7 @@ export default function OrderSummary({
   };
 
   return (
-    <div className="w-full md:w-80 bg-black mt-20 p-4 rounded-lg shadow-md border-l border-yellow-500">
+    <div className="w-full md:w-80 bg-black mt-20 p-4 rounded-lg shadow-md border-l border-yellow-200">
       <h3 className="text-xl font-bold mb-4">Your Order</h3>
       
       {cart.length === 0 ? (

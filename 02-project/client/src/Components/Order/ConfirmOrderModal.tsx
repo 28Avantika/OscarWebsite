@@ -5,8 +5,8 @@ interface ConfirmOrderModalProps {
   isOpen: boolean;
   onClose: () => void;
   cart: CartItem[];
-  userId?: string | null;  // Add this line
-  customerName?: string | null; // Also make sure this exists
+  userId?: string | null;
+  customerName?: string | null;
   onConfirm: (address: string, phone: string, orderDetails: {
     subtotal: number;
     gst: number;
@@ -68,7 +68,7 @@ export default function ConfirmOrderModal({
     ).join('\n');
 
     // Create WhatsApp message
-     const message = `My Order at *Oscar cafe and Gaming Zone*\n\n` +
+    const message = `My Order at *Oscar cafe and Gaming Zone*\n\n` +
       `*Order Summary:*\n${orderSummary}\n\n` +
       `*Total:* ₹${orderDetails.total.toFixed(2)}\n\n` +
       `*Delivery Address:* \n ${address}\n\n` +
@@ -207,7 +207,9 @@ export default function ConfirmOrderModal({
             </button>
 
           </div>
-          <p className='text-xs pt-2 animate-pulse text-center'>After confirming You will be redirected to whatsapp. Do click on <b>Send</b> on WhatsApp </p>
+          <p className='text-xs pt-2 animate-pulse text-center'>
+            You will be redirected to WhatsApp with a prefilled message.
+            Please <b>SEND</b> it to confirm your order and payment details.</p>
         </div>
       </div>
     </div>
