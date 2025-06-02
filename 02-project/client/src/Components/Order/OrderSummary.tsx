@@ -59,21 +59,21 @@ export default function OrderSummary({
                   <div className="flex items-center rounded-md">
                     <button 
                       onClick={() => onUpdateQuantity(item.id, item.quantity - 1)}
-                      className="px-2 py-1 text-yellow-200 hover:bg-yellow-900"
+                      className="px-2 py-1 text-yellow-200 hover:font-extrabold"
                     >
                       -
                     </button>
                     <span className="text-yellow-200 text-xs px-2">{item.quantity}</span>
                     <button 
                       onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}
-                      className="px-2 py-1 text-yellow-200 hover:bg-gray-100"
+                      className="px-2 py-1 text-yellow-200 hover:font-extrabold"
                     >
                       +
                     </button>
                   </div>
                   <button 
                     onClick={() => onRemove(item.id)}
-                    className=" text-red-300 text-xs"
+                    className=" text-red-300 text-xs hover:font-bold"
                   >
                     Remove
                   </button>

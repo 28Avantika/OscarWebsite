@@ -97,10 +97,10 @@ export default function MenuItems() {
                                 className="bg-[#1a1a1a] flex flex-col justify-between rounded-lg shadow-sm p-4"
                               >
                                 <div>
-                                  <p className="text-yellow-500">{item.name}</p>
-                                  <div className="flex gap-4 mt-1 text-gray-300">
-                                    {item.full && <p className="text-sm">Full ₹{item.full}</p>}
-                                    {item.half && item.half !== '-' && <p className="text-sm">Half ₹{item.half}</p>}
+                                  <h6>{item.name}</h6>
+                                  <div className="flex gap-4 mt-1 text-yellow-100">
+                                    {item.full && <p className="text-sm">Full ₹ <b>{item.full}</b> </p>}
+                                    {item.half && item.half !== '-' && <p className="text-sm">Half ₹ <b>{item.half}</b></p>}
                                   </div>
                                 </div>
                                 <button
