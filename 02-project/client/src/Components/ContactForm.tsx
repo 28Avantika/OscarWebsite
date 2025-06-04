@@ -24,6 +24,8 @@ const ContactForm: React.FC = () => {
         }));
     };
 
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
     const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -31,7 +33,7 @@ const ContactForm: React.FC = () => {
         await addDoc(collection(db, "onlineQueries"), formData);
         
         // Send to Telegram
-        const response = await fetch("http://localhost:5000/api/send-telegram", {
+        const response = await fetch(`${API_URL}/api/send-telegram`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
