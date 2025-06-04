@@ -52,7 +52,7 @@ const ContactForm: React.FC = () => {
         
         // Optionally show success message
         alert('Message sent successfully!');
-        
+
     } catch (error) {
         console.error("Error:", error);
         alert('Failed to send message. Please try again.');
