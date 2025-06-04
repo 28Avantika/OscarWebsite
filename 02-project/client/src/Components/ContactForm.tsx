@@ -1,87 +1,55 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { db } from "../firebase";
 import { addDoc, collection } from "firebase/firestore";
 
-interface FormData{
-    name:string;
-    phone:string;
-    message:string;
+interface FormData {
+    name: string;
+    phone: string;
+    message: string;
 };
-
-const sendTelegramNotification = async (orderData: {
-  name: string;
-  phone: string;
-  message: string;
-}) => {
-  const botToken = "7997849403:AAHdtIQWUe8CflhhJne91SfCXOZxOMWxA2o"; // From BotFather
-  const chatId = "1465248926"; // From userinfobot
-
-  const message = `🚨 *New Query from ContactForm of Oscar's Website*
-
-👤 *Name:* ${orderData.name}
-📞 *Phone:* ${orderData.phone}
-📝 *User Message:* ${orderData.message}
-🕒 Time: ${new Date().toLocaleString()}`;
-
-  const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-
-  try {
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: message,
-        parse_mode: "Markdown",
-      }),
-    });
-
-    const data = await res.json();
-    if (!data.ok) throw new Error("Failed to send message");
-    //console.log("Telegram notification sent");
-  } catch (err) {
-    console.error("Telegram error:", err);
-  }
-};
-
 
 const ContactForm: React.FC = () => {
 
     const [formData, setFormData] = useState<FormData>({
-    name: '',
-    phone:  "",
-    message: '',
-  });
+        name: '',
+        phone: "",
+        message: '',
+    });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      const docRef = await addDoc(collection(db, "onlineQueries"), formData);
-     //console.log("A Query has been submitted with ID: ",docRef.id) 
-      // Reset form after successful submission
-    } catch (error) {
-      console.error("Error adding document: ", error);
-    }
+        e.preventDefault();
+        try {
+            await addDoc(collection(db, "onlineQueries"), formData);
+            //console.log("A Query has been submitted with ID: ",docRef.id) 
+            // Reset form after successful submission
+        } catch (error) {
+            console.error("Error adding document: ", error);
+        }
 
-    await sendTelegramNotification({
-        name:formData.name,
-        phone:formData.phone,
-        message: formData.message,
-    })
-    // Reset form after successful submission
-      setFormData({name: '',phone: '',message: ''});
+        await fetch("http://localhost:5000/api/send-telegram", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                name: formData.name,
+                phone: formData.phone,
+                message: formData.message,
+            }),
+        });
 
-  };
+        // Reset form after successful submission
+        setFormData({ name: '', phone: '', message: '' });
+
+    };
 
 
     return (
@@ -115,11 +83,11 @@ const ContactForm: React.FC = () => {
 
                             <address className="not-italic text-l pt-3 leading-relaxed text-gray-300">
                                 <b>Oscar Food Park, Laxmi Chowk,<br></br>
-                                Near Yash Wines, Opp. to Sairat Biryani,<br></br>
-                                Phase 1, Hinjewadi, Pune - 411057</b>
+                                    Near Yash Wines, Opp. to Sairat Biryani,<br></br>
+                                    Phase 1, Hinjewadi, Pune - 411057</b>
                             </address>
                         </div>
-                          <div className="flex sm:justify-center items-center gap-4">
+                        <div className="flex sm:justify-center items-center gap-4">
                             <a href="https://www.instagram.com/oscar_cafexgaming/" target="_blank" rel="noopener noreferrer">
                                 <img
                                     src="/images/insta.png"
@@ -131,7 +99,7 @@ const ContactForm: React.FC = () => {
                             <h6 className="not-italic text-l pt-3 leading-relaxed text-gray-300">
                                 Follow to stay updated with fresh offers <br></br>and deals !! </h6>
                         </div>
-                      
+
 
                     </div>
                 </div>
