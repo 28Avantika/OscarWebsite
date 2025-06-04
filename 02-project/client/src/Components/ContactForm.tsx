@@ -65,7 +65,7 @@ const ContactForm: React.FC = () => {
     return (
         <section id="contact-section" className="bg-black min-h-screen px-4 py-10 flex flex-col items-center justify-center text-white">
             {/* Main Title */}
-            <h2 className="text-4xl font-bold text-yellow-300 mb-10 text-center uppercase tracking-wide pb-4">
+            <h2 className="text-4xl  font-bold text-yellow-300 mb-10 text-center uppercase tracking-wide pb-4">
                 Contact Us
             </h2>
 
@@ -74,8 +74,9 @@ const ContactForm: React.FC = () => {
                 {/* Left: Contact Info */}
                 <div className="space-y-6">
                     <div className="lg:mt-30">
-                        <span className="text-xl text-justify md:text-3xl text-center mt-3 flex flex-col sm:flex-row gap-4 items-start sm:items-center sm:justify-center">Let's Connect at OSCAR!
-                        </span>
+                        <h4 className="text-yellow-500 text-justify md:text-3xl text-center mt-3 flex flex-col sm:flex-row gap-4 items-start sm:items-center sm:justify-center">
+                            Connect to OSCAR Community !
+                        </h4>
 
                     </div>
 
@@ -115,9 +116,9 @@ const ContactForm: React.FC = () => {
                 </div>
 
                 {/* Right: Form */}
-                <div className="p-8 bg-gradient-to-r from-gray-900 to-gray-900 rounded-2xl shadow-lg">
+                <div className="p-9 rounded bg-black border-t border-l-2 border-yellow-200 ">
                     <h5 className="text-2xl font-bold text-yellow-300 pb-4 mb-6 text-center">
-                        Having Trouble Booking? Shoot Us a Message! 🚀
+                        Having any queries Shoot Us a Message!
                     </h5>
                     <form id="contact-form" onSubmit={handleSubmit} className="space-y-4 ">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -131,7 +132,7 @@ const ContactForm: React.FC = () => {
                                     value={formData.name}
                                     onChange={handleChange}
                                     placeholder="Enter your name"
-                                    className="w-full px-4 py-2 bg-gray-800 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-300"
+                                    className="w-full px-4 py-2 rounded border-l border-yellow-200 focus:outline-none "
                                 />
                             </div>
                             <div>
@@ -145,7 +146,7 @@ const ContactForm: React.FC = () => {
                                     value={formData.phone}
                                     onChange={handleChange}
                                     placeholder="Enter your number"
-                                    className="w-full px-4 py-2 bg-gray-800 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-300"
+                                    className="w-full px-4 py-2 rounded border-l border-yellow-200 focus:outline-none  "
                                 />
                             </div>
                         </div>
@@ -159,19 +160,16 @@ const ContactForm: React.FC = () => {
                                 onChange={handleChange}
                                 required
                                 placeholder="Type your message here..."
-                                className="w-full px-4 py-2 mb-3 bg-gray-800 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-300"
+                                className="w-full px-4 py-2 rounded border-l border-yellow-200 focus:outline-none "
                             />
                         </div>
                         <div className="text-center">
                             <button
                                 type="submit"
-                                className="bg-gradient-to-r  from-orange-700 via-amber-500 to-amber-600 px-6 py-2 rounded text-white font-semibold hover:opacity-90 transition-all"
+                                className="border-r border-b-2 border-yellow-200 px-6 py-2 rounded hover:font-bold transition-all"
                             >
                                 Send Message
                             </button>
-                            <p className="italic text-sm text-gray-400 pt-2">
-                                Whether it's a booking, question, or feedback — we're just a message away.
-                            </p>
                         </div>
                     </form>
                 </div>
