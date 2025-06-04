@@ -25,16 +25,13 @@ const ContactForm: React.FC = () => {
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        try {
-            await addDoc(collection(db, "onlineQueries"), formData);
-            //console.log("A Query has been submitted with ID: ",docRef.id) 
-            // Reset form after successful submission
-        } catch (error) {
-            console.error("Error adding document: ", error);
-        }
-
-        await fetch("http://localhost:5000/api/send-telegram", {
+    e.preventDefault();
+    try {
+        // Save to Firestore
+        await addDoc(collection(db, "onlineQueries"), formData);
+        
+        // Send to Telegram
+        const response = await fetch("http://localhost:5000/api/send-telegram", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -46,10 +43,21 @@ const ContactForm: React.FC = () => {
             }),
         });
 
+        if (!response.ok) {
+            throw new Error('Failed to send message to Telegram');
+        }
+
         // Reset form after successful submission
         setFormData({ name: '', phone: '', message: '' });
-
-    };
+        
+        // Optionally show success message
+        alert('Message sent successfully!');
+        
+    } catch (error) {
+        console.error("Error:", error);
+        alert('Failed to send message. Please try again.');
+    }
+};
 
 
     return (
