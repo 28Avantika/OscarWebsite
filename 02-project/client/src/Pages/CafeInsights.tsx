@@ -44,7 +44,7 @@ const CafeInsights: React.FC = () => {
                 </section> */}
 
                 {/* Meet Founders Section */}
-                <section className="w-full pt-3 bg-gradient-to-t from-black to-pink-800  md:py-20 px-4">
+                <section className="w-full pt-3 bg-gradient-to-b from-black via-pink-800 to-black md:py-20 px-4">
                     <h2 className="fontStyle md:text-4xl md:pt-10 lg:pt-20 font-bold text-center">
                         Cafe Insights</h2>
                     <div className="container pt-15 mx-auto">
