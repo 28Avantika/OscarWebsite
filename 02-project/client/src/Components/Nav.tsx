@@ -1,13 +1,14 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom"; // Added Link and useNavigate
+import { Link, useNavigate, useLocation } from "react-router-dom"; // Added useLocation
 import AuthButton from "./Auth/AuthButton";
 import { useAuth } from "../context/AuthContext";
 import "../index.css";
 
 function NavBarComp() {
     const [scrolled, setScrolled] = useState(false);
-    const navigate = useNavigate(); // For programmatic navigation
+    const navigate = useNavigate();
+    const location = useLocation(); // Get current route location
 
     useEffect(() => {
         const handleScroll = () => {
@@ -21,7 +22,6 @@ function NavBarComp() {
     const { user } = useAuth();
 
     const handleContactClick = () => {
-        // Navigate to home first if not already there
         if (window.location.pathname !== "/") {
             navigate("/");
             setTimeout(() => {
@@ -29,13 +29,20 @@ function NavBarComp() {
                 if (section) {
                     section.scrollIntoView({ behavior: "smooth" });
                 }
-            }, 100); // Small delay to allow page transition
+            }, 100);
         } else {
             const section = document.getElementById("contact-section");
             if (section) {
                 section.scrollIntoView({ behavior: "smooth" });
             }
         }
+    };
+
+    const isActive = (path: string) => {
+        if (path === "/") {
+            return location.pathname === "/";
+        }
+        return location.pathname.startsWith(path);
     };
 
     return (
@@ -45,7 +52,7 @@ function NavBarComp() {
             fixed="top"
         >
             <Container>
-                <Navbar.Brand as={Link} to="/"> {/* Changed href to as={Link} to="/" */}
+                <Navbar.Brand as={Link} to="/">
                     <img
                         src="/images/OgLogo.png"
                         width="60"
@@ -60,13 +67,12 @@ function NavBarComp() {
                         <Nav.Link as={Link} to="/" className="text-6xl font-extrabold text-white neon-link p-0 m-0 leading-none">
                             OSCAR
                         </Nav.Link>
-                        <Nav.Link as={Link} to="/" className="text-lg italic text-white neon-link p-0 m-0 leading-none">
-                            Cafe &amp; Game Zone
+                        <Nav.Link as={Link} to="/" className="text-lg italic text-white p-0 m-0 leading-none">
+                            CAFE & GAME ZONE
                         </Nav.Link>
                     </div>
                 </Nav>
 
-                {/* Custom toggler button */}
                 <Navbar.Toggle
                     aria-controls="navbar-nav"
                     className="border-0 p-1"
@@ -80,13 +86,30 @@ function NavBarComp() {
 
                 <Navbar.Collapse id="navbar-nav" className="">
                     <Nav className="ml-auto">
-                        <Nav.Link as={Link} to="/insights" className="neon-link">About</Nav.Link>
-                        <Nav.Link as={Link} to="/menu" className="neon-link">Menu</Nav.Link>
-                        <Nav.Link as={Link} to="/games" className="neon-link">Gaming</Nav.Link>
-                        {/* <Nav.Link as={Link} to="/gallery" className="neon-link">Gallery</Nav.Link> */}
+                        <Nav.Link 
+                            as={Link} 
+                            to="/insights" 
+                            className={`neon-link ${isActive("/insights") ? "active-nav-link" : ""}`}
+                        >
+                            About
+                        </Nav.Link>
+                        <Nav.Link 
+                            as={Link} 
+                            to="/menu" 
+                            className={`neon-link ${isActive("/menu") ? "active-nav-link" : ""}`}
+                        >
+                            Menu
+                        </Nav.Link>
+                        <Nav.Link 
+                            as={Link} 
+                            to="/games" 
+                            className={`neon-link ${isActive("/games") ? "active-nav-link" : ""}`}
+                        >
+                            Gaming
+                        </Nav.Link>
                         <Nav.Link
                             onClick={handleContactClick}
-                            className="neon-link"
+                            className={`neon-link ${location.hash === "#contact-section" ? "active-nav-link" : ""}`}
                         >
                             Contact
                         </Nav.Link>

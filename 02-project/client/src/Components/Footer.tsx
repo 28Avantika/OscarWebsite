@@ -18,8 +18,9 @@ const FooterSec: React.FC = () => {
           
           {/* Column 1: Brand Info */}
           <div className="space-y-4">
-            <h2 className="text-3xl font-bold text-[#d9dc32] tracking-tight">
-              OSCAR<br />CAFE & GAME ZONE
+            <h2 className="fontStyle text-3xl font-bold text-[#d9dc32] tracking-tight">
+              OSCAR<br />
+              <div className="inline italic"> CAFE & GAME ZONE</div>
             </h2>
             <p className="text-gray-200 text-sm leading-relaxed">
               Your one-stop spot to chill, sip, and play. We offer the perfect blend of 
@@ -29,49 +30,49 @@ const FooterSec: React.FC = () => {
 
           {/* Column 2: Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold uppercase tracking-wider text-[#d9dc32]">
+            <h3 className=" fontStyle text-lg font-bold uppercase tracking-wider ">
               Quick Links
             </h3>
-            <nav className="space-y-2">
+            <nav className=" space-y-2 items-center justify-center">
               <button 
                 onClick={() => handleNavigation('/insights')}
-                className="block text-gray-400 hover:text-[#d9dc32] transition duration-300 text-left w-full"
+                className="block text-gray-200 hover:text-yellow-200 transition duration-300 text-left w-full"
               >
                 About
               </button>
               <button 
                 onClick={() => handleNavigation('/menu')}
-                className="block text-gray-400 hover:text-[#d9dc32] transition duration-300 text-left w-full"
+                className="block text-gray-200 hover:text-yellow-200 transition duration-300 text-left w-full"
               >
                 Menu
               </button>
               <button 
                 onClick={() => handleNavigation('/games')}
-                className="block text-gray-400 hover:text-[#d9dc32] transition duration-300 text-left w-full"
+                className="block text-gray-200 hover:text-yellow-200 transition duration-300 text-left w-full"
               >
                 Gaming
               </button>
               <button 
                 onClick={() => handleNavigation('/gallery')}
-                className="block text-gray-400 hover:text-[#d9dc32] transition duration-300 text-left w-full"
+                className="block text-gray-200 hover:text-yellow-200 transition duration-300 text-left w-full"
               >
                 Gallery
               </button>
               <button 
                 onClick={() => handleNavigation('/contact')}
-                className="block text-gray-400 hover:text-[#d9dc32] transition duration-300 text-left w-full"
+                className="block text-gray-200 hover:text-yellow-200 transition duration-300 text-left w-full"
               >
-                Contact Us
+                Contact
               </button>
             </nav>
           </div>
 
           {/* Column 3: Contact Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold uppercase tracking-wider text-[#d9dc32]">
+            <h3 className=" fontStyle text-lg font-bold uppercase tracking-wider text-[#d9dc32]">
               Contact Us
             </h3>
-            <address className="not-italic text-gray-200 text-sm leading-relaxed">
+            <address className="not-italic hover:text-yellow-200 text-gray-200 text-sm leading-relaxed">
               Oscar Food Park, Laxmi Chowk,<br />
               Near Yash Wines, Opp. to Sairat Biryani,<br />
               Phase 1, Hinjewadi, Pune - 411057
@@ -79,7 +80,7 @@ const FooterSec: React.FC = () => {
             <div className="space-y-1">
               <button 
                 onClick={handlePhoneClick}
-                className="block text-gray-400 hover:text-[#d9dc32] transition duration-300 text-left"
+                className="block text-gray-200 hover:text-yellow-200 transition duration-300 text-left"
               >
                 +91 9762837188
               </button>
@@ -87,7 +88,7 @@ const FooterSec: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-6 text-center">
+        <div className="fontStyle border-t border-gray-800 mt-12 pt-6 text-center">
           <p className="text-gray-500 text-sm">
             © {new Date().getFullYear()} Oscar Cafe & Game Zone. All rights reserved.
           </p>

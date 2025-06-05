@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { db } from "../firebase";
 import { addDoc, collection } from "firebase/firestore";
+import { motion } from "framer-motion";
 
 interface FormData {
     name: string;
@@ -27,45 +28,45 @@ const ContactForm: React.FC = () => {
     const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
     const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-        // Save to Firestore
-        await addDoc(collection(db, "onlineQueries"), formData);
-        
-        // Send to Telegram
-        const response = await fetch(`${API_URL}/api/send-telegram`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                name: formData.name,
-                phone: formData.phone,
-                message: formData.message,
-            }),
-        });
+        e.preventDefault();
+        try {
+            // Save to Firestore
+            await addDoc(collection(db, "onlineQueries"), formData);
 
-        if (!response.ok) {
-            throw new Error('Failed to send message to Telegram');
+            // Send to Telegram
+            const response = await fetch(`${API_URL}/api/send-telegram`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    phone: formData.phone,
+                    message: formData.message,
+                }),
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to send message to Telegram');
+            }
+
+            // Reset form after successful submission
+            setFormData({ name: '', phone: '', message: '' });
+
+            // Optionally show success message
+            alert('Message sent successfully!');
+
+        } catch (error) {
+            console.error("Error:", error);
+            alert('Failed to send message. Please try again.');
         }
-
-        // Reset form after successful submission
-        setFormData({ name: '', phone: '', message: '' });
-        
-        // Optionally show success message
-        alert('Message sent successfully!');
-
-    } catch (error) {
-        console.error("Error:", error);
-        alert('Failed to send message. Please try again.');
-    }
-};
+    };
 
 
     return (
         <section id="contact-section" className="bg-black min-h-screen px-4 py-10 flex flex-col items-center justify-center text-white">
             {/* Main Title */}
-            <h2 className="text-4xl  font-bold text-yellow-300 mb-10 text-center uppercase tracking-wide pb-4">
+            <h2 className=" fontStyle text-4xl  font-bold text-yellow-300 mb-10 text-center uppercase tracking-wide pb-4">
                 Contact Us
             </h2>
 
@@ -74,9 +75,9 @@ const ContactForm: React.FC = () => {
                 {/* Left: Contact Info */}
                 <div className="space-y-6">
                     <div className="lg:mt-30">
-                        <h4 className="text-yellow-500 text-justify md:text-3xl text-center mt-3 flex flex-col sm:flex-row gap-4 items-start sm:items-center sm:justify-center">
+                        <p className="fontStyle text-xl text-yellow-300 text-justify md:text-3xl text-center flex flex-col sm:flex-row gap-4 items-start sm:items-center sm:justify-center">
                             Connect to OSCAR Community !
-                        </h4>
+                        </p>
 
                     </div>
 
@@ -92,10 +93,10 @@ const ContactForm: React.FC = () => {
                                 />
                             </a>
 
-                            <address className="not-italic text-l pt-3 leading-relaxed text-gray-300">
-                                <b>Oscar Food Park, Laxmi Chowk,<br></br>
+                            <address className="italic pt-3 leading-relaxed">
+                                <p className="fontStyle">Oscar Food Park, Laxmi Chowk,<br></br>
                                     Near Yash Wines, Opp. to Sairat Biryani,<br></br>
-                                    Phase 1, Hinjewadi, Pune - 411057</b>
+                                    Phase 1, Hinjewadi, Pune - 411057</p>
                             </address>
                         </div>
                         <div className="flex sm:justify-center items-center gap-4">
@@ -107,8 +108,8 @@ const ContactForm: React.FC = () => {
                                     className="w-20 h-20 object-contain mt-1 cursor-pointer"
                                 />
                             </a>
-                            <h6 className="not-italic text-l pt-3 leading-relaxed text-gray-300">
-                                Follow to stay updated with fresh offers <br></br>and deals !! </h6>
+                            <p className="fontStyle text-l pt-3 leading-relaxed">
+                                Follow to stay updated with fresh offers <br></br>& deals </p>
                         </div>
 
 
@@ -116,8 +117,13 @@ const ContactForm: React.FC = () => {
                 </div>
 
                 {/* Right: Form */}
-                <div className="p-9 rounded bg-black border-t border-l-2 border-yellow-200 ">
-                    <h5 className="text-2xl font-bold text-yellow-300 pb-4 mb-6 text-center">
+
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="p-9 rounded bg-gray-900/60 border-t border-l-2 border-yellow-200 ">
+                    <h5 className="fontStyle text-2xl font-bold text-yellow-300 pb-4 mb-6 text-center">
                         Having any queries Shoot Us a Message!
                     </h5>
                     <form id="contact-form" onSubmit={handleSubmit} className="space-y-4 ">
@@ -172,7 +178,7 @@ const ContactForm: React.FC = () => {
                             </button>
                         </div>
                     </form>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

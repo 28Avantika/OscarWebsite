@@ -8,9 +8,9 @@ const MenuSwiper: React.FC = () => (
         {['/images/Oscar/Menu/Front.png', '/images/Oscar/Menu/Back.png', '/images/Oscar/Menu/Chinese1.png', '/images/Oscar/Menu/Chinese2.png'].map((img, idx) => (
           <SwiperSlide key={idx}>
             <div className='flex items-center justify-center gap-4'>
-              <span className="hidden sm:block text-semibold text-gradient-to-r from-orange-700 via-amber-500 to-amber-300 animate-slide-arrow italic">&larr;  swipe</span>
-              <h5 className='hidden sm:block text-center font-bold nline-flex px-4 py-1 font-bold rounded bg-gradient-to-r from-orange-700 via-amber-500 to-amber-300 transition-al'>Menu {idx + 1}</h5>
-              <span className="hidden sm:block text-gradient-to-r from-orange-700 via-amber-500 to-amber-300 animate-slide-arrow italic"> swipe &rarr;</span>
+              <p className="hidden sm:block text-pink-200 ">&larr;  swipe</p>
+              <h5 className='hidden sm:block text-center border-b-2 border-pink-200 nline-flex px-4 py-1 font-bold rounded'>Menu {idx + 1}</h5>
+              <p className="hidden sm:block text-pink-200 "> swipe &rarr;</p>
             </div>
             <img
               src={`${img}`}

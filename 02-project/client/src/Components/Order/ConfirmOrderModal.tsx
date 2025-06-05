@@ -93,10 +93,10 @@ export default function ConfirmOrderModal({
 
   return (
 
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center m-2">
-      <div className="bg-gray-200 mt-35 rounded-lg w-full max-w-md max-h-[90vh] border-2 border-yellow-200 overflow-y-auto custom-scrollbar">
+    <div className="fixed shadow-lg inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center m-2">
+      <div className="mt-35 rounded-lg w-full max-w-md max-h-[90vh] overflow-y-auto shadow-[0_0_20px_#fbbf24aa] custom-scrollbar">
         {/* Header */}
-        <div className="sticky top-0 bg-black p-2 border-b border-yellow-200 ml-10 mr-10">
+        <div className="fontStyle sticky text-yellow-200  top-0 bg-black p-2 border-b border-yellow-200 ">
           <h3 className="text-xl font-bold text-center">Confirm Your Order</h3>
         </div>
 
@@ -105,13 +105,13 @@ export default function ConfirmOrderModal({
           {/* Slider Navigation */}
           <div className="flex mb-4 ">
             <button
-              className={`flex-1 pb-2 text-sm font-medium ${activeTab === 'order' ? 'text-yellow-200 border-b-2 border-yellow-200' : 'text-gray-500'}`}
+              className={`fontStyle flex-1 pb-2 text-sm font-medium ${activeTab === 'order' ? 'text-yellow-200 border-b-2 border-yellow-200' : 'text-gray-500'}`}
               onClick={() => setActiveTab('order')}
             >
               Order Details
             </button>
             <button
-              className={`flex-1 pb-2 text-sm font-medium ${activeTab === 'address' ? 'text-yellow-200 border-b-2 border-yellow-200' : 'text-gray-500'}`}
+              className={`fontStyle flex-1 pb-2 text-sm font-medium ${activeTab === 'address' ? 'text-yellow-200 border-b-2 border-yellow-200' : 'text-gray-500'}`}
               onClick={() => setActiveTab('address')}
             >
               Delivery Details
@@ -129,9 +129,9 @@ export default function ConfirmOrderModal({
                         <div className="flex justify-between items-start">
                           <div>
                             <p className="font-medium text-sm">
-                              {item.name} <span className="text-yellow-300 text-xs">({item.portion})</span>
+                              {item.name} <p className="inline text-yellow-200 text-xs">({item.portion})</p>
                             </p>
-                            <p className="text-yellow-300 text-xs">Qty: {item.quantity}</p>
+                            <p className="text-yellow-100 text-xs">Qty: {item.quantity}</p>
                           </div>
                           <p className="font-semibold text-sm whitespace-nowrap">₹{(parseFloat(item.price) * item.quantity).toFixed(2)}</p>
                         </div>
@@ -143,8 +143,8 @@ export default function ConfirmOrderModal({
                 <div className="border-t border-yellow-200">
                   <div className="flex flex-col m-auto text-sm w-full px-4 py-2">
                     <div className="flex justify-between font-semibold">
-                      <h6 className='text-yellow-200'>Total:</h6>
-                      <h6>₹{total.toFixed(2)}</h6>
+                      <h6 className='fontStyle text-yellow-200'>Total:</h6>
+                      <h6 className='fontStyle'>₹{total.toFixed(2)}</h6>
                     </div>
                   </div>
                 </div>
@@ -161,7 +161,7 @@ export default function ConfirmOrderModal({
                 <textarea
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
-                  className="w-full p-2 bg-black border-l-2 border-yellow-200 focus:outline-none text-sm"
+                  className="w-full rounded p-2 border-l-2 border-yellow-200 focus:outline-none text-sm"
                   rows={3}
                   placeholder="Enter your delivery address"
                   required
@@ -169,12 +169,12 @@ export default function ConfirmOrderModal({
               </div>
 
               <div className="mb-4">
-                <label className="block mb-1 text-sm font-medium">Phone Number</label>
+                <label className="block mb-1 text-sm font-meium">Phone Number</label>
                 <input
                   type="tel"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full p-2  bg-black border-l-2 border-yellow-200 focus:outline-none text-sm"
+                  className="w-full p-2 rounded  border-l-2 border-yellow-200 focus:outline-none text-sm"
                   placeholder="Enter your phone number"
                   required
                 />
@@ -188,13 +188,13 @@ export default function ConfirmOrderModal({
 
           <div className="flex space-x-3">
             <button
-              className="flex-1 py-2.5  text-white bg-red-800 rounded m-1 rounded-md text-sm font-medium"
+              className="fontStyle flex-1 py-2.5 text-white bg-red-700/80 hover:bg-red-500 rounded m-1 rounded-md text-sm"
               onClick={onClose}
             >
               Cancel
             </button>
             <button
-              className="flex-1 rounded  bg-gradient-to-r from-amber-700 m-1 via-amber-600 to-amber-700 hover:opacity-80 text-white"
+              className="fontStyle flex-1 py-2.5  text-white bg-green-700/80 hover:bg-green-600 rounded m-1 rounded-md text-sm font-medium"
               onClick={() => handleConfirmOrder(address, phone, {
                 subtotal,
                 gst,
@@ -207,9 +207,8 @@ export default function ConfirmOrderModal({
             </button>
 
           </div>
-          <p className='text-xs pt-2 animate-pulse text-center'>
-            You will be redirected to WhatsApp with a prefilled message.
-            Please <b>SEND</b> it to confirm your order and payment details.</p>
+          <p className='text-xs pt-2 italic text-center'>
+            You’ll be redirected to WhatsApp with a prefilled message. Tap SEND to confirm ✅  your order.</p>
         </div>
       </div>
     </div>

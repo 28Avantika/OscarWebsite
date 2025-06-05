@@ -1,8 +1,11 @@
 /* span  */
+.fontStyle{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
 span {
   color: #d9dc32 !important;
   font-family: Roboto;
-  
+
 }
 
 /* // Navbar  */
@@ -12,8 +15,8 @@ span {
 .custom-navbar {
     background-color: rgba(0, 0, 0, 0.85);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    font-family: "Lucida Bright", Georgia, serif;
-    font-size: 1.2rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.4rem;
     padding: 0.8rem 1rem;
     z-index: 999;
   }
@@ -29,16 +32,17 @@ span {
   }
   
   .neon-link {
-    color: #d9dc32 !important;
+    color:#fff!important;
     margin-left: 1rem;
-    text-shadow: 0 0 4px #6e33ff;
     transition: color 0.3s;
-    font-family: Roboto;
+    font-family: "Lucida Bright, Georgia, serif";
+    
   }
   
   .neon-link:hover {
-    color: #fff !important;
-    text-shadow: 0 0 8px #5bb2c6;
+    color: #d8b240f3 ;
+    text-shadow: 0 0 8px #ffd900;
+    border-top: #ffd900;
   }
 
   .zones {
@@ -63,9 +67,8 @@ span {
 .custom-scrollbar {
   scrollbar-width: thin;   
   background-color: #000000;           /* For Firefox */
-  scrollbar-color: #f59e0b #000000;   /* thumb and track colors */
+  scrollbar-color: #000000 #000000;   /* thumb and track colors */
 }
-
 /* Adjust navbar height on mobile */
 @media (max-width: 992px) {
   .custom-navbar {
@@ -103,3 +106,25 @@ span {
   transform: scale(1.2);
   z-index: 1;
 }
+/* Active nav link styles */
+.active-nav-link {
+    position: relative;
+    background-color: #fef08a; 
+    border-radius: 0.25rem; 
+    padding: 0.25rem 0.5rem;
+}
+
+.active-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: white; /* Or any color you prefer for the underline */
+    border-radius: 2px;
+}
+
+
+
+

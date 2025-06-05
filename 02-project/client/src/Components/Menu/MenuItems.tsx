@@ -47,7 +47,7 @@ export default function MenuItems() {
             <button
               key={category.category_id}
               className={`px-4 py-2 rounded whitespace-nowrap transition-colors ${activeCategory === category.category_name
-                ? "rounded text-semobold bg-gradient-to-r from-orange-700 via-amber-500 to-amber-500 hover:opacity-80"
+                ? "rounded fontStyle text-semobold bg-gradient-to-r from-orange-700 via-amber-500 to-amber-500 hover:opacity-80"
                 : "bg-black text-white hover:bg-gray-200"
                 }`}
               onClick={() => setActiveCategory(category.category_name)}
@@ -67,13 +67,15 @@ export default function MenuItems() {
                 className={`${activeCategory === category.category_name ? "block" : "hidden"
                   }`}
               >
-                <h2 className="text-xl font-bold text-gray-200 mb-4">
+                <h2 className="text-xl fontStyle font-bold text-gray-200 mb-4">
                   <span className="mr-2">{category.icon}</span>
                   {category.category_name}
                 </h2>
 
                 {category.items.map((subcategory) => (
-                  <div key={subcategory.subcategory_id} className="mb-8">
+                  <div
+                    key={subcategory.subcategory_id}
+                    className="mb-8">
                     {category.items.length > 1 ? (
                       <>
                         {/* Expandable Section */}
@@ -225,7 +227,7 @@ export default function MenuItems() {
         <div className="fixed bottom-4 right-4 md:hidden">
           <button
             onClick={() => setShowMobileCart(true)}
-            className="bg-amber-600 text-white p-3 rounded-full shadow-lg relative"
+            className="bg-gray-900 rounded shadow-[0_0_15px_#fb923caa] text-white p-3 rounded-full relative"
           >
             🛒
             {cart.length > 0 && (

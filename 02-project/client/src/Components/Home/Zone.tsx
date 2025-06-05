@@ -15,19 +15,19 @@ const ResponsiveZoneCards = () => {
 
   const cards = [
     {
-      title: "Food Zone",
+      title: "Food",
       img: "/images/food8.png",
       desc: "Coffee, Pasta, Burger , Pizza...",
       onClick: () => navigate("/menu"),
     },
     {
-      title: "Gaming Zone",
+      title: "Gaming",
       img: "/images/gaming6.png",
       desc: "PS5, PoolTable, Snooker",
-      onClick: () => {},
+      onClick: () => {navigate("/games")},
     },
     {
-      title: "Play Zone",
+      title: "Lounge",
       img: "/images/playing4.png",
       desc: "Chess, Carrom, Jenga, Uno Cards",
       onClick: () => {},
@@ -36,20 +36,20 @@ const ResponsiveZoneCards = () => {
 
   const Card: React.FC<CardProps> = ({ title, img, desc, onClick }) => (
     <div className="flex flex-col items-center text-center bg-black/20 p-4 rounded-lg shadow-md w-full mx-auto">
-      <h3 className="text-lg mb-3 font-semibold">{title}</h3>
+      <h3 className="text-lg mb-3 fontStyle">{title}</h3>
       <img
         src={img}
         alt={title}
         className="w-40 h-40 sm:w-60 sm:h-60 md:w-70 md:h-70 lg:w-70 lg:h-60 xl:w-95 xl:h-75 object-cover rounded-lg transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
       />
-      <p className="mt-4 font-italic text-l">{desc}</p>
+      <p className="mt-4 text-yellow-200 font-italic text-l">{desc}</p>
       <button
         onClick={onClick}
-        className="flex items-center justify-center pl-5 py-2 mt-4 font-bold text-white rounded bg-gradient-to-r from-orange-700 via-amber-500 to-amber-300 hover:opacity-80 transition-all"
+        className="flex items-center justify-center font-bold pl-2 py-2 mt-4 border-l-6 border-t border-b-2 border-yellow-300 text-white rounded  hover:font-extrabold transition-all"
         style={{ borderRadius: "10px" }}
       >
-        Explore more
-        <span className="ml-2 animate-slide-arrow">&rarr;</span>
+        {title} zone
+        <div className="ml-2 inline  text-yellow-300 animate-slide-arrow">&rarr;</div>
       </button>
     </div>
   );
@@ -57,7 +57,7 @@ const ResponsiveZoneCards = () => {
   const sliderSettings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 700,
     slidesToShow: 1,
     swipeToSlide: true,
   };
@@ -65,7 +65,7 @@ const ResponsiveZoneCards = () => {
   return (
     <>
       {/* Mobile: Carousel */}
-      <div className="block lg:hidden px-4 py-6">
+      <div className="block lg:hidden px-4 py-">
         <Slider {...sliderSettings}>
           {cards.map((card, idx) => (
             <div key={idx}>

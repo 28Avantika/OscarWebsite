@@ -1,22 +1,22 @@
 import React, { useState } from "react";
-import NavBarComp from "../Components/Nav";
 import BackToTopButton from "../Components/BackToTopButton";
-import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+//import { useNavigate } from "react-router-dom";
 const CafeInsights: React.FC = () => {
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
 
     const slides = [
         { src: "/images/main1.jpeg", alt: "" },
-        { src: "/images/2.mp4", alt: "" },
-        { src: "/images/3.mp4", alt: "" },
-        { src: "/images/a1.jpeg", alt: "" },
+        { src: "/images/Oscar/t1.jpg", alt: "" },
+        { src: "/images/C9.jpg", alt: "" },
+        { src: "/images/C5.jpg", alt: "" },
         { src: "/images/a2.jpeg", alt: "" },
         { src: "/images/a3.jpeg", alt: "" },
-        { src: "/images/a4.jpeg", alt: "" },
+        { src: "/images/C1.jpg", alt: "" },
         { src: "/images/8.mp4", alt: "" },
         { src: "/images/a5.jpeg", alt: "" },
         { src: "/images/10.mp4", alt: "" },
-        { src: "/images/11.mp4", alt: "" },
+        { src: "/images/C7.jpg", alt: "" },
     ];
     const [current, setCurrent] = useState(0);
 
@@ -29,13 +29,10 @@ const CafeInsights: React.FC = () => {
     };
 
     return (
-        <div id="about-section" className="min-h-screen pt-15 bg-black text-white overflow-x-hidden">
-            <NavBarComp />
+        <div id="about-section" className="min-h-screen bg-black text-white">
             <div className="pt-24 sm:pt-0 md:pt-5"> {/* Added padding-top for mobile */}
-                <h3 className="font-roboto md:text-4xl sm:pb-5 md:pt-10 lg:pt-12 font-bold text-center">Cafe Insights</h3>
-
                 {/* Hero Section */}
-                <section className="md:hidden relative h-[50vh] md:h-[100vh] bg-cover bg-center flex items-center justify-center text-center">
+                {/* <section className="md:hidden  relative h-[50vh] md:h-[100vh] bg-cover bg-center flex items-center justify-center text-center">
                     <video
                         className="absolute inset-0 w-full h-full object-cover z-0"
                         src="/images/HeroVideo.mp4"
@@ -44,54 +41,56 @@ const CafeInsights: React.FC = () => {
                         loop
                         playsInline
                     ></video>
-                </section>
+                </section> */}
 
                 {/* Meet Founders Section */}
-                <section className="w-full pt-3 bg-gradient-to-b from-black to-pink-900  md:py-20 px-4">
-                    <div className="container mx-auto">
+                <section className="w-full pt-3 bg-gradient-to-t from-black to-pink-800  md:py-20 px-4">
+                    <h2 className="fontStyle md:text-4xl md:pt-10 lg:pt-20 font-bold text-center">
+                        Cafe Insights</h2>
+                    <div className="container pt-15 mx-auto">
                         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                             <div className="space-y-6">
-                                <h2 className="text-3xl md:text-4xl font-bold text-[#d9dc32]">
-                                    We're Aditya & Avishkar
-                                </h2>
-                                <p className="text-base md:text-lg text-gray-300">
-                                    Founded in 2021 by brothers Aditya & Avishkar, OSCAR was born from a simple dream: 
+                                <h4 className="fontStyle text-3xl md:text-4xl font-bold">
+                                    Our story
+                                </h4>
+                                <p className="text-base md:text-l text-gray-300">
+                                    Founded in 2021 by brothers Aditya & Avishkar, OSCAR was born from a simple dream:
                                     to create a space where people could eat, play, work, and chill — anytime, any day.
-                                     Located in the heart of Hinjewadi, we’re more than a cafe; we’re a round-the-clock 
-                                     experience where every bite fuels your game and every game sparks new connections
+                                    Located in the heart of Hinjewadi, we’re more than a cafe; we’re a round-the-clock
+                                    experience where every bite fuels your game and every game sparks new connections
                                 </p>
-                                
+
                             </div>
-                            <div className="flex justify-center  md:justify-start space-x-4">
-                                    <div className="founder-card text-center group">
-                                        <div className="h-32 w-32 md:h-40 md:w-40 rounded-full border-2 border-[#d9dc32] overflow-hidden mx-auto">
-                                            <img
-                                                src="/images/aditya.jpg"
-                                                alt="Aditya"
-                                                className="w-full h-full object-cover group-hover:scale-110 transition"
-                                            />
-                                        </div>
-                                        <p className="mt-2 text-[#d9dc32]">Aditya</p>
+                            <div className="flex justify-center lg:pl-15 md:justify-start space-x-4">
+                                <div className="founder-card text-center group">
+                                    <div className="h-32 w-32 md:h-40 md:w-40 rounded-full border-l-6 border-pink-700 overflow-hidden mx-auto">
+                                        <img
+                                            src="/images/aditya.jpg"
+                                            alt="Aditya"
+                                            className="w-full h-full object-cover group-hover:scale-110 transition"
+                                        />
                                     </div>
-                                    <div className="founder-card text-center group">
-                                        <div className="h-32 w-32 md:h-40 md:w-40 rounded-full border-2 border-[#d9dc32] overflow-hidden mx-auto">
-                                            <img
-                                                src="/images/avishkar.jpg"
-                                                alt="Avishkar"
-                                                className="w-full h-full object-cover group-hover:scale-110 transition"
-                                            />
-                                        </div>
-                                        <p className="mt-2 text-[#d9dc32]">Avishkar</p>
-                                    </div>
+                                    <p className="fontStyle mt-2">Aditya</p>
                                 </div>
+                                <div className="founder-card text-center group">
+                                    <div className="h-32 w-32 md:h-40 md:w-40 rounded-full border-l-6 border-pink-700 overflow-hidden mx-auto">
+                                        <img
+                                            src="/images/avishkar.jpg"
+                                            alt="Avishkar"
+                                            className="w-full h-full object-cover group-hover:scale-110 transition"
+                                        />
+                                    </div>
+                                    <p className="fontStyle mt-2">Avishkar</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
 
                 {/* Photo Gallery / Virtual Tour */}
                 <section className="container mx-auto px-4 py-10">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-center">
-                        Moments from Our Zone
+                    <h2 className="fontStyle text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-center">
+                        Moments from Our Cafe and Gaming Zone
                     </h2>
                     <div className="relative w-full md:w-3/4 mx-auto my-6 md:my-10">
                         <div className="relative h-64 md:h-80">
@@ -147,20 +146,20 @@ const CafeInsights: React.FC = () => {
                             </button>
                         </div>
                     </div>
-                    <h6 className="text-center"> Click to see more of <span className="text-xl md:text-2xl font-bold mb-4 md:mb-6"> Oscar's Cafe </span></h6>
-                    <button
+                    <h6 className="text-center"> Click to see more of <div className="fontStyle inline text-xl md:text-2xl text-pink-500 mb-4 pl-1 md:mb-6"> our zones </div></h6>
+                    {/* <button
                         onClick={() => navigate("/gallary")}
                         className="flex flex-row px-4 py-2 font-bold rounded bg-gradient-to-r from-orange-700 via-amber-500 to-amber-300 hover:opacity-80 transition-all mx-auto my-4"
                     >
                         Gallery
                         <span className="ml-2 text-white animate-slide-arrow">&rarr;</span>
-                    </button>
+                    </button> */}
                 </section>
 
                 {/* Stats / Highlights */}
                 <section className="w-full py-10 md:py-20 px-4 relative">
                     <div className="container mx-auto px-4">
-                        <h2 className="text-xl md:text-3xl font-bold py-4 md:py-6 text-center text-gray-200">
+                        <h2 className="fontStyle text-xl pb-30 md:text-3xl font-bold py-4 md:py-6 text-center">
                             Our Journey in Numbers
                         </h2>
 
@@ -170,17 +169,20 @@ const CafeInsights: React.FC = () => {
                                 { value: "1000+", label: "Happy Customers" },
                                 { value: "24/7", label: "Open Since Day 1" }
                             ].map((item, index) => (
-                                <div
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.6 }}
                                     key={index}
-                                    className="py-3 px-4 md:py-4 hover:bg-pink-900/50 hover:scale-[1.02] cursor-pointer  rounded-md transition-all duration-300 hover:border-yellow-400"
+                                    className="py-3 px-4 md:py-4 focus:border-none rounded border-b-3 border-l border-pink-600 bg-gray-900/50"
                                 >
-                                    <p className="text-2xl md:text-4xl font-extrabold text-yellow-400">
+                                    <p className="text-2xl md:text-4xl font-bold hover:cursor-pointer  hover:font-extrabold ">
                                         {item.value}
                                     </p>
-                                    <p className="mt-1 text-xs md:text-sm text-gray-300">
+                                    <p className="mt-1 text-xs md:text-sm text-gray-400">
                                         {item.label}
                                     </p>
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
                     </div>

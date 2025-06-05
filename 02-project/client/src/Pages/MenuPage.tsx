@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 
 const menuItems = [
@@ -22,22 +23,26 @@ const menuItems = [
 
 const MenuPage: React.FC = () => {
   const navigate = useNavigate();
-  
+
   return (
 
     <div className="bg-black text-white">
       {/* Hero Text */}
-      <section className="text-center bg-gradient-to-r from-orange-700 via-pink-700 to-yellow-500 pt-35">
-        <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-300">
+      <motion.section
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-center bg-gradient-to-r from-orange-700 via-pink-700 to-yellow-500 pt-35">
+        <h1 className=" fontStyle text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-300">
           Food that fuels your Game Nights!
         </h1>
-        <h5 className="pb-18 text-center">With Every Bite Level-Up Your Energy!
+        <h5 className="pb-18 italic text-center">With Every Bite Level-Up Your Energy!
         </h5>
-      </section>
+      </motion.section>
 
       {/* Carousel in Between */}
       <div className="w-full pb-5 py-6 px-4">
-        
+
         <Slider
           infinite={true}
           speed={3000}
@@ -69,25 +74,25 @@ const MenuPage: React.FC = () => {
               }
             }
           ]}
-        >       
+        >
           {menuItems.map((item, index) => (
-            <div key={index} className="px-2 text-center group">
+            <div key={index} className="px-2  text-center group">
               <div className="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full overflow-visible shadow-lg relative">
                 <img
                   src={item.img}
                   alt={item.title}
                   className="w-full h-full object-cover origin-center transition-all duration-300 group-hover:scale-125"
                   style={{
-                    position:"absolute",
+                    position: "absolute",
                     top: "0",
                     left: "50%",
                     transform: "translateX(-50%) scale(1.1)",
                     minHeight: "130%",
-                    objectPosition: "center center" 
+                    objectPosition: "center center"
                   }}
                 />
               </div>
-              <p className="mt-2 pt-5 text-sm md:text-base font-style:italic font-medium transition-colors">
+              <p className="mt-2 pt-5 text-sm md:text-base  font-medium transition-colors">
                 {item.title}
               </p>
             </div>
@@ -96,22 +101,22 @@ const MenuPage: React.FC = () => {
       </div>
 
       <section className="flex justify-center pb-10 px-5 gap-5 md:gap-8 lg:gap-30">
-  <button
-    className="inline-flex px-4 py-2 font-bold rounded bg-gradient-to-r from-orange-700 via-amber-500 to-amber-300 hover:opacity-80 transition-all"
-    onClick={() => navigate("/menuFlipbook")}
-  >
-    Explore Menu
-    <span className="ml-2 text-white animate-slide-arrow">&rarr;</span>
-  </button>
+        <button
+          className="inline-flex px-4 py-2 font-bold hover:font-extrabold rounded border-l-4 border-b-2 border-t border-pink-400  transition-all"
+          onClick={() => navigate("/menuFlipbook")}
+        >
+          Explore Menu
+          <span className="ml-2 text-white animate-slide-arrow">&rarr;</span>
+        </button>
 
-  <button
-    className="inline-flex px-4 py-2 font-bold rounded bg-gradient-to-r from-orange-700 via-amber-500 to-amber-300 hover:opacity-80 transition-all"
-    onClick={() => navigate("/menuItems")}
-  >
-    Order Now
-    <span className="ml-2 text-white animate-slide-arrow">&rarr;</span>
-  </button>
-</section>
+        <button
+          className="inline-flex px-4 py-2 font-bold hover:font-extrabold rounded border-l-4 border-b-2 border-t border-orange-400  transition-all"
+          onClick={() => navigate("/menuItems")}
+        >
+          Order Now
+          <span className="ml-2 text-white animate-slide-arrow">&rarr;</span>
+        </button>
+      </section>
 
 
     </div>
