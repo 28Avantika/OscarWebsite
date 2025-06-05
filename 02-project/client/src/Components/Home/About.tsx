@@ -16,7 +16,7 @@ const AboutUs: React.FC = () => {
           With Great Food & Non-Stop Gaming, we're
         </p>
         <h6 className="text-base text-white leading-relaxed tracking-normal  md:text-center text-justify lg:text-center ">
-          Pune's ultimate hotspot for foodies, gamers, coffee lovers, and late-night
+          pune's ultimate hotspot for foodies, gamers, coffee lovers, and late-night
           chillers. Located at the heart of Hinjewadi, we bring together flavor-packed
           food, an immersive gaming experience, and non-stop entertainment,
 
