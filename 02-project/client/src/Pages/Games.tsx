@@ -60,13 +60,13 @@ const Games: React.FC = () => {
   };
 
   return (
-    <div id="gaming-section" className="bg-black pt-15 text-white min-h-screen">
+    <div id="gaming-section" className="bg-black text-white min-h-screen">
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center bg-gradient-to-r from-purple-900 via-violet-700 to-sky-500 py-12 px-4"
+        className="text-center bg-gradient-to-r from-purple-900 via-violet-700 to-sky-500 pt-35 pb-8 px-4"
       >
         <h1 className="fontStyle text-5xl md:text-7xl font-extrabold mb-4">Level Up Your Fun!</h1>
         <p className="text-xl italic text-white/80">Pune’s Ultimate Gaming Arena</p>
@@ -77,10 +77,7 @@ const Games: React.FC = () => {
         <div className="w-full md:w-3/5">
           <Slider {...settings}>
             {gamingMedia.map((item) => (
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+              <div
                 key={item.id}
                 className="relative group"
               >
@@ -89,7 +86,7 @@ const Games: React.FC = () => {
                   alt={item.title}
                   className="w-full h-80 object-cover rounded-xl"
                 />
-              </motion.div>
+              </div>
             ))}
           </Slider>
         </div>
