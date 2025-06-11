@@ -3,8 +3,7 @@ import Slider from "react-slick";
 import { motion } from "framer-motion";
 import { GiBlackball } from "react-icons/gi";
 import { FaGamepad, FaCrown } from "react-icons/fa";
-import BookingModal from "../Components/Game/BookingModal";
-//import BookingModal from "./BookingModal";
+//import BookingModal from "../Components/Game/BookingModal";
 
 // Media carousel data
 const gamingMedia = [
@@ -78,13 +77,19 @@ const Games: React.FC = () => {
         <div className="w-full md:w-3/5">
           <Slider {...settings}>
             {gamingMedia.map((item) => (
-              <div key={item.id} className="relative group">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                key={item.id}
+                className="relative group"
+              >
                 <img
                   src={item.src}
                   alt={item.title}
                   className="w-full h-80 object-cover rounded-xl"
                 />
-              </div>
+              </motion.div>
             ))}
           </Slider>
         </div>
@@ -97,6 +102,7 @@ const Games: React.FC = () => {
 
       {/* Game Cards */}
       <div className="container mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Snooker */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -111,13 +117,15 @@ const Games: React.FC = () => {
           </p>
           <p className="text-blue-100">₹200/hr per person</p>
           <button
-            onClick={() => alert("In Progress !!")}
+            //onClick={() => openModal("Snooker")}
+            onClick={ ()=> alert("In Progress !! For any bookings visit our Contact Section. Thank you !")}
             className="mt-2 px-4 py-2 border-r-4 border-b border-blue-500 rounded hover:font-bold"
           >
-            Book your Slot Now
+            Book my Slot
           </button>
         </motion.div>
 
+        {/* 8 Ball Pool */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -132,13 +140,15 @@ const Games: React.FC = () => {
           </p>
           <p className="text-blue-100">₹100/hr per person</p>
           <button
-            onClick={() => alert("In Progress !!")}
+            //onClick={() => openModal("8 BALL POOL")}
+            onClick={ ()=> alert("In Progress !! For any bookings visit our Contact Section. Thank you !")}
             className="mt-2 px-4 py-2 border-r-4 border-b border-green-500 rounded hover:font-bold"
           >
-            Book your Slot Now
+            Book my Slot
           </button>
         </motion.div>
 
+        {/* PlayStation 5 */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -153,19 +163,21 @@ const Games: React.FC = () => {
           </p>
           <p className="text-blue-100">₹100/hr per person</p>
           <button
-            onClick={() => alert("In Progress !!")}
+            //onClick={() => openModal("PlayStation 5")}
+            onClick={ ()=> alert("In Progress !! For any bookings visit our Contact Section. Thank you !")}
             className="mt-2 px-4 py-2 border-r-4 border-b border-purple-500 rounded hover:font-bold"
           >
-            Book your Slot Now
+            Book my Slot
           </button>
         </motion.div>
       </div>
 
       {/* Modal */}
-      <BookingModal
+      {/* <BookingModal
         isOpen={isModalOpen}
         closeModal={closeModal}
-        game={selectedGame} />
+        game={selectedGame}
+      /> */}
     </div>
   );
 };
