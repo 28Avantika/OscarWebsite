@@ -141,7 +141,7 @@ export default function SignupForm({ onSwitchToLogin, onSuccessSignup }: SignupF
           type="button"
           onClick={handleGoogleSignIn}
           disabled={isGoogleLoading}
-          className="w-full flex items-center justify-center gap-2 bg-green-800 rounded py-2 px-4 text-sm text-white focus:outline-none hover:bg-green-700 transition-colors"
+          className="w-full flex items-center justify-center gap-2 bg-green-800 rounded py-1 px-4 text-sm text-white focus:outline-none hover:bg-green-700 transition-colors"
         >
           {isGoogleLoading ? (
             'Signing up...'
@@ -176,7 +176,7 @@ export default function SignupForm({ onSwitchToLogin, onSuccessSignup }: SignupF
           placeholder="Enter your full name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="mt-1 block w-full bg-black text-white border border-yellow-200 rounded p-2 focus:outline-none focus:ring-1 focus:ring-yellow-200"
+          className="mt-1 block w-full bg-black text-white border-l border-yellow-200 rounded pl-2 focus:outline-none"
           required
         />
       </div>
@@ -188,10 +188,10 @@ export default function SignupForm({ onSwitchToLogin, onSuccessSignup }: SignupF
         <input
           type="email"
           id="email"
-          placeholder="Enter email (e.g., user@example.com)"
+          placeholder="user@example.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="mt-1 block w-full bg-black text-white border border-yellow-200 rounded p-2 focus:outline-none focus:ring-1 focus:ring-yellow-200"
+          className="mt-1 block w-full bg-black text-white border-l border-yellow-200 rounded pl-2 focus:outline-none"
           required
           pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
           title="Please enter a valid email address (e.g., user@example.com)"
@@ -205,13 +205,13 @@ export default function SignupForm({ onSwitchToLogin, onSuccessSignup }: SignupF
         <input
           type="tel"
           id="phone"
-          placeholder="Enter 10-digit number (e.g., 1234567890)"
+          placeholder="Enter phone number"
           value={phone}
           onChange={(e) => {
             const value = e.target.value.replace(/\D/g, '').slice(0, 10);
             setPhone(value);
           }}
-          className="mt-1 block w-full bg-black text-white border border-yellow-200 rounded p-2 focus:outline-none focus:ring-1 focus:ring-yellow-200"
+          className="mt-1 block w-full bg-black text-white border-l border-yellow-200 rounded pl-2 focus:outline-none"
           pattern="\d{10}"
           title="Please enter a 10-digit phone number (e.g., 1234567890)"
         />
@@ -224,10 +224,10 @@ export default function SignupForm({ onSwitchToLogin, onSuccessSignup }: SignupF
         <input
           type="password"
           id="password"
-          placeholder="Enter password (min 6 characters)"
+          placeholder="min 6 characters"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="mt-1 block w-full bg-black text-white border border-yellow-200 rounded p-2 focus:outline-none focus:ring-1 focus:ring-yellow-200"
+          className="mt-1 block w-full bg-black text-white border-l border-yellow-200 rounded pl-2 focus:outline-none"
           required
           minLength={6}
         />
@@ -240,10 +240,10 @@ export default function SignupForm({ onSwitchToLogin, onSuccessSignup }: SignupF
         <input
           type="password"
           id="confirmPassword"
-          placeholder="Re-type your password"
+          placeholder="Re-type  password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
-          className="mt-1 block w-full bg-black text-white border border-yellow-200 rounded p-2 focus:outline-none focus:ring-1 focus:ring-yellow-200"
+          className="mt-1 block w-full bg-black text-white border-l border-yellow-200 rounded pl-2 focus:outline-none"
           required
           minLength={6}
         />
@@ -254,7 +254,7 @@ export default function SignupForm({ onSwitchToLogin, onSuccessSignup }: SignupF
           type="submit"
           onClick={handleSubmit}
           disabled={isLoading}
-          className="w-full font-bold py-2 px-4 bg-blue-900 rounded focus:outline-none hover:bg-blue-800 transition-colors disabled:opacity-50"
+          className="w-full  py-1 px-4 bg-blue-900 rounded focus:outline-none hover:bg-blue-800 transition-colors disabled:opacity-50"
         >
           {isLoading ? 'Creating account...' : 'Sign Up'}
         </button>

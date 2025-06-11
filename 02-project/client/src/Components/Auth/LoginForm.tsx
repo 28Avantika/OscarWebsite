@@ -135,7 +135,7 @@ export default function LoginForm({
           type="button"
           onClick={handleGoogleSignIn}
           disabled={isGoogleLoading}
-          className="w-full flex items-center bg-green-800 justify-center gap-2 text-white rounded-md shadow-sm py-2 px-4 focus:outline-none hover:bg-green-700 transition-colors"
+          className="w-full flex items-center bg-green-800 justify-center gap-2 text-white rounded-md shadow-sm py-1 rounded px-4 focus:outline-none hover:bg-green-700 transition-colors"
         >
           {isGoogleLoading ? 'Signing in...' : (
             <>
@@ -159,9 +159,9 @@ export default function LoginForm({
           type="email"
           id="email"
           value={email}
-          placeholder='Enter Email (e.g., user@example.com)'
+          placeholder='user@example.com'
           onChange={(e) => setEmail(e.target.value)}
-          className="mt-1 block w-full bg-black text-white border border-yellow-200 rounded p-2 focus:outline-none focus:ring-1 focus:ring-yellow-200"
+          className="mt-1 block w-full bg-black border-l  text-white border-yellow-200 rounded pl-2 focus:outline-none"
           required
           pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
           title="Please enter a valid email address (e.g., user@example.com)"
@@ -173,10 +173,10 @@ export default function LoginForm({
         <input
           type="password"
           id="password"
-          placeholder='Enter password (min 6 characters)'
+          placeholder='min 6 characters'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="mt-1 block w-full bg-black text-white border border-yellow-200 rounded p-2 focus:outline-none focus:ring-1 focus:ring-yellow-200"
+          className="mt-1 block w-full bg-black text-white border-l border-yellow-200 rounded pl-2 focus:outline-none"
           required
           minLength={6}
         />
@@ -197,7 +197,7 @@ export default function LoginForm({
           type="submit"
           onClick={handleSubmit}
           disabled={isLoading}
-          className="w-full font-bold py-2 px-4 bg-blue-900 rounded focus:outline-none hover:bg-blue-800 transition-colors disabled:opacity-50"
+          className="w-full  py-1 px-2 bg-blue-900 rounded focus:outline-none hover:bg-blue-800 transition-colors disabled:opacity-50"
         >
           {isLoading ? 'Logging in...' : 'Login'}
         </button>
