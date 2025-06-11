@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { signUpWithEmail, signInWithGoogle, auth } from '../../firebase';
+import { signUpWithEmail, signInWithGoogle } from '../.././firebase';
+import { auth } from "../.././firebase";
 
 type SignupFormProps = {
   onSwitchToLogin: () => void;
@@ -64,23 +65,30 @@ export default function SignupForm({ onSwitchToLogin, onSuccessSignup }: SignupF
     try {
       await signUpWithEmail(email, password, name, phone);
       onSuccessSignup();
-    } catch (err: any) {
-      switch (err.code) {
-        case 'auth/email-already-in-use':
-          setError('Email already in use. Please login instead.');
-          break;
-        case 'auth/invalid-email':
-          setError('Invalid email address format');
-          break;
-        case 'auth/weak-password':
-          setError('Password is too weak. Use at least 6 characters.');
-          break;
-        case 'auth/operation-not-allowed':
-          setError('Email/password accounts are not enabled');
-          break;
-        default:
-          setError('Failed to create account. Please try again.');
+    } 
+    catch (err: any) {
+      if (auth.currentUser) {
+        return;
       }
+      if (err.code) {
+        switch (err.code) {
+          case 'auth/email-already-in-use':
+            setError('Email already in use. Please login instead.');
+            break;
+          case 'auth/invalid-email':
+            setError('Invalid email address format');
+            break;
+          case 'auth/weak-password':
+            setError('Password is too weak. Use at least 6 characters.');
+            break;
+          case 'auth/operation-not-allowed':
+            setError('Email/password accounts are not enabled');
+            break;
+          default:
+            setError('Failed to create account. Please try again.');
+        }
+      }
+
     } finally {
       setIsLoading(false);
     }
