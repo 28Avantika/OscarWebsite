@@ -111,7 +111,7 @@ const Games: React.FC = () => {
           </p>
           <p className="text-blue-100">₹200/hr per person</p>
           <button
-            onClick={() => alert("In Progress !!")}
+            onClick={() => alert("In Progress !! For booking contact Oscar Cafe. Contact details are given in contact Section as well as in Footer")}
             className="mt-2 px-4 py-2 border-r-4 border-b border-blue-500 rounded hover:font-bold"
           >
             Book your Slot Now
@@ -132,7 +132,7 @@ const Games: React.FC = () => {
           </p>
           <p className="text-blue-100">₹100/hr per person</p>
           <button
-            onClick={() => alert("In Progress !!")}
+            onClick={() => alert("In Progress !! For booking contact Oscar Cafe. Contact details are given in contact Section as well as in Footer")}
             className="mt-2 px-4 py-2 border-r-4 border-b border-green-500 rounded hover:font-bold"
           >
             Book your Slot Now
@@ -153,7 +153,7 @@ const Games: React.FC = () => {
           </p>
           <p className="text-blue-100">₹100/hr per person</p>
           <button
-            onClick={() => alert("In Progress !!")}
+            onClick={() => alert("In Progress !! For booking contact Oscar Cafe. Contact details are given in contact Section as well as in Footer")}
             className="mt-2 px-4 py-2 border-r-4 border-b border-purple-500 rounded hover:font-bold"
           >
             Book your Slot Now
