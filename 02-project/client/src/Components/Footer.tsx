@@ -12,7 +12,7 @@ const FooterSec: React.FC = () => {
   };
 
   return (
-    <footer className="bg-black text-white font-roboto">
+    <footer className="bg-black border-t border-gray-400  text-white font-roboto">
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
           
@@ -22,7 +22,7 @@ const FooterSec: React.FC = () => {
               OSCAR<br />
               <div className="inline italic"> CAFE & GAME ZONE</div>
             </h2>
-            <p className="text-gray-200 text-sm leading-relaxed">
+            <p className="text-gray-400 text-sm leading-relaxed">
               Your one-stop spot to chill, sip, and play. We offer the perfect blend of 
               delicious food, refreshing drinks, and exciting gaming experiences.
             </p>
@@ -36,31 +36,31 @@ const FooterSec: React.FC = () => {
             <nav className=" space-y-2 items-center justify-center">
               <button 
                 onClick={() => handleNavigation('/insights')}
-                className="block text-gray-200 hover:text-yellow-200 transition duration-300 text-left w-full"
+                className="block text-gray-400 hover:text-yellow-200 transition duration-300 text-left w-full"
               >
                 About
               </button>
               <button 
                 onClick={() => handleNavigation('/menu')}
-                className="block text-gray-200 hover:text-yellow-200 transition duration-300 text-left w-full"
+                className="block text-gray-400 hover:text-yellow-200 transition duration-300 text-left w-full"
               >
                 Menu
               </button>
               <button 
                 onClick={() => handleNavigation('/games')}
-                className="block text-gray-200 hover:text-yellow-200 transition duration-300 text-left w-full"
+                className="block text-gray-400 hover:text-yellow-200 transition duration-300 text-left w-full"
               >
                 Gaming
               </button>
               <button 
                 onClick={() => handleNavigation('/gallery')}
-                className="block text-gray-200 hover:text-yellow-200 transition duration-300 text-left w-full"
+                className="block text-gray-400 hover:text-yellow-200 transition duration-300 text-left w-full"
               >
                 Gallery
               </button>
               <button 
                 onClick={() => handleNavigation('/contact')}
-                className="block text-gray-200 hover:text-yellow-200 transition duration-300 text-left w-full"
+                className="block text-gray-400 hover:text-yellow-200 transition duration-300 text-left w-full"
               >
                 Contact
               </button>
@@ -72,7 +72,7 @@ const FooterSec: React.FC = () => {
             <h3 className=" fontStyle text-lg font-bold uppercase tracking-wider text-[#d9dc32]">
               Contact Us
             </h3>
-            <address className="not-italic hover:text-yellow-200 text-gray-200 text-sm leading-relaxed">
+            <address className="not-italic hover:text-yellow-200 text-gray-400 text-sm leading-relaxed">
               Oscar Food Park, Laxmi Chowk,<br />
               Near Yash Wines, Opp. to Sairat Biryani,<br />
               Phase 1, Hinjewadi, Pune - 411057

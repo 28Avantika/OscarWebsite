@@ -65,7 +65,7 @@ const ResponsiveZoneCards = () => {
   return (
     <>
       {/* Mobile: Carousel */}
-      <div className="block lg:hidden px-4 py-">
+      <div className="block lg:hidden  px-4 py-">
         <Slider {...sliderSettings}>
           {cards.map((card, idx) => (
             <div key={idx}>

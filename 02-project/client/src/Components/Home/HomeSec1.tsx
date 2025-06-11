@@ -6,7 +6,7 @@ const HomeSec1: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-gradient-to-b from-black via-gray-600/70 to-black relative font-bold pt-30 sm:py-16 md:py-40 lg:pt-30 px-10 sm:px-6 md:px-10">
+    <section className="bg-gradient-to-b from-black via-amber-700/70 to-black relative font-bold pt-30 sm:py-16 md:py-40 lg:pt-30 px-10 sm:px-6 md:px-10">
       <div className="max-w-5xl mx-auto md:flex md:items-center">
         {/* Left side - Your existing content (unchanged) */}
         <div className="px-3 md:w-2/3 lg:w-1/2">

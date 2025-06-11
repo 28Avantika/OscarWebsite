@@ -4,7 +4,7 @@ import ResponsiveZoneCards from "./Zone";
 const HomeSec2: React.FC = () => {
     return (
         <section id="zone-section"
-            className="relative text-white p-5 md:p-20 ">
+            className="bg-gradient-to-b from-black via-red-800 to-black relative text-white p-5 md:p-20 ">
 
             <h1 className="fontStyle md:text-3xl text-center ">
                 Explore Zones

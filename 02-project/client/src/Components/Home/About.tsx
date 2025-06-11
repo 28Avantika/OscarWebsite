@@ -4,11 +4,11 @@ import { useNavigate } from "react-router-dom";
 const AboutUs: React.FC = () => {
   const navigate = useNavigate()
   return (
-    <section id="about-section" className="relative text-white p-4 md:p-10  ">
+    <section id="about-section" className="relative text-white p-4 md:p-10  mt-5 ">
       <div className="absolute inset-0 "></div> {/* Overlay */}
 
       <div className="relative z-10 max-w-4xl mx-auto  space-y-6">
-        <h1 className="fontStyle text-3xl md:text-4xl font-bold flex flex-col sm:flex-row gap-4 items-start sm:items-center sm:justify-center ">
+        <h1 className="fontStyle text-3xl md:text-4xl font-bold flex flex-col sm:flex-row gap-4 items-start sm:items-center sm:justify-center  ">
           About Us
           {/* About <span className="text-yellow-300">US</span> */}
         </h1>
