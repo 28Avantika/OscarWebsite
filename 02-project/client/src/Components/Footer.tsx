@@ -1,11 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const FooterSec: React.FC = () => {
-  // Navigation handler
-  const handleNavigation = (path: string) => {
-    window.location.pathname = path; // This will navigate to the new path
-  };
-
   // Contact handlers
   const handlePhoneClick = () => {
     window.location.href = "tel:+919762837188";
@@ -15,7 +11,7 @@ const FooterSec: React.FC = () => {
     <footer className="bg-black border-t border-gray-400  text-white font-roboto">
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-          
+
           {/* Column 1: Brand Info */}
           <div className="space-y-4">
             <h2 className="fontStyle text-3xl font-bold text-[#d9dc32] tracking-tight">
@@ -34,36 +30,36 @@ const FooterSec: React.FC = () => {
               Quick Links
             </h3>
             <nav className=" space-y-2 items-center justify-center">
-              <button 
-                onClick={() => handleNavigation('/insights')}
+              <Link 
+                to="/insights"
                 className="block text-gray-400 hover:text-yellow-200 transition duration-300 text-left w-full"
               >
                 About
-              </button>
-              <button 
-                onClick={() => handleNavigation('/menu')}
+              </Link>
+              <Link 
+                to="/menu"
                 className="block text-gray-400 hover:text-yellow-200 transition duration-300 text-left w-full"
               >
                 Menu
-              </button>
-              <button 
-                onClick={() => handleNavigation('/games')}
+              </Link>
+              <Link 
+                to="/games"
                 className="block text-gray-400 hover:text-yellow-200 transition duration-300 text-left w-full"
               >
                 Gaming
-              </button>
-              <button 
-                onClick={() => handleNavigation('/gallery')}
+              </Link>
+              <Link 
+                to="/gallery"
                 className="block text-gray-400 hover:text-yellow-200 transition duration-300 text-left w-full"
               >
                 Gallery
-              </button>
-              <button 
-                onClick={() => handleNavigation('/contact')}
+              </Link>
+              <Link 
+                to="/contact"
                 className="block text-gray-400 hover:text-yellow-200 transition duration-300 text-left w-full"
               >
                 Contact
-              </button>
+              </Link>
             </nav>
           </div>
 
