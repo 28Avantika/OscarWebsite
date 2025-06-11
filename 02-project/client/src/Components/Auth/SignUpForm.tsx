@@ -176,7 +176,7 @@ export default function SignupForm({ onSwitchToLogin, onSuccessSignup }: SignupF
           placeholder="Enter your full name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="mt-1 block w-full bg-black text-white border-l border-yellow-200 rounded pl-2 focus:outline-none"
+          className="mt-1 block w-full bg-black text-white border-l border-yellow-200 rounded p-2 focus:outline-none"
           required
         />
       </div>
@@ -191,7 +191,7 @@ export default function SignupForm({ onSwitchToLogin, onSuccessSignup }: SignupF
           placeholder="user@example.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="mt-1 block w-full bg-black text-white border-l border-yellow-200 rounded pl-2 focus:outline-none"
+          className="mt-1 block w-full bg-black text-white border-l border-yellow-200 rounded p-2 focus:outline-none"
           required
           pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
           title="Please enter a valid email address (e.g., user@example.com)"
@@ -211,7 +211,7 @@ export default function SignupForm({ onSwitchToLogin, onSuccessSignup }: SignupF
             const value = e.target.value.replace(/\D/g, '').slice(0, 10);
             setPhone(value);
           }}
-          className="mt-1 block w-full bg-black text-white border-l border-yellow-200 rounded pl-2 focus:outline-none"
+          className="mt-1 block w-full bg-black text-white border-l border-yellow-200 rounded p-2 focus:outline-none"
           pattern="\d{10}"
           title="Please enter a 10-digit phone number (e.g., 1234567890)"
         />
@@ -227,7 +227,7 @@ export default function SignupForm({ onSwitchToLogin, onSuccessSignup }: SignupF
           placeholder="min 6 characters"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="mt-1 block w-full bg-black text-white border-l border-yellow-200 rounded pl-2 focus:outline-none"
+          className="mt-1 block w-full bg-black text-white border-l border-yellow-200 rounded p-2 focus:outline-none"
           required
           minLength={6}
         />
@@ -243,7 +243,7 @@ export default function SignupForm({ onSwitchToLogin, onSuccessSignup }: SignupF
           placeholder="Re-type  password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
-          className="mt-1 block w-full bg-black text-white border-l border-yellow-200 rounded pl-2 focus:outline-none"
+          className="mt-1 block w-full bg-black text-white border-l border-yellow-200 rounded p-2 focus:outline-none"
           required
           minLength={6}
         />

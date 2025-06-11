@@ -161,7 +161,7 @@ export default function LoginForm({
           value={email}
           placeholder='user@example.com'
           onChange={(e) => setEmail(e.target.value)}
-          className="mt-1 block w-full bg-black border-l  text-white border-yellow-200 rounded pl-2 focus:outline-none"
+          className="mt-1 block w-full bg-black border-l  text-white border-yellow-200 rounded p-2 focus:outline-none"
           required
           pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
           title="Please enter a valid email address (e.g., user@example.com)"
@@ -176,7 +176,7 @@ export default function LoginForm({
           placeholder='min 6 characters'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="mt-1 block w-full bg-black text-white border-l border-yellow-200 rounded pl-2 focus:outline-none"
+          className="mt-1 block w-full bg-black text-white border-l border-yellow-200 rounded p-2 focus:outline-none"
           required
           minLength={6}
         />
