@@ -49,7 +49,11 @@ const CafeInsights: React.FC = () => {
                         Cafe Insights</h2>
                     <div className="container pt-15 mx-auto">
                         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-                            <div className="space-y-6">
+                            <motion.div
+                                initial={{ opacity: 0, x: -50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.8 }}
+                                className="space-y-6">
                                 <h4 className="fontStyle text-3xl md:text-4xl font-bold">
                                     Our story
                                 </h4>
@@ -60,9 +64,13 @@ const CafeInsights: React.FC = () => {
                                     experience where every bite fuels your game and every game sparks new connections
                                 </p>
 
-                            </div>
+                            </motion.div>
                             <div className="flex justify-center lg:pl-15 md:justify-start space-x-4">
-                                <div className="founder-card text-center group">
+                                <motion.div
+                                    initial={{ opacity: 0, y: -50 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8 }}
+                                    className="founder-card text-center group">
                                     <div className="h-32 w-32 md:h-40 md:w-40 rounded-full border-l-6 border-pink-700 overflow-hidden mx-auto">
                                         <img
                                             src="/images/aditya.jpg"
@@ -71,8 +79,12 @@ const CafeInsights: React.FC = () => {
                                         />
                                     </div>
                                     <p className="fontStyle mt-2">Aditya</p>
-                                </div>
-                                <div className="founder-card text-center group">
+                                </motion.div>
+                                <motion.div
+                                    initial={{ opacity: 0, y: -50 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8 }}
+                                    className="founder-card text-center group">
                                     <div className="h-32 w-32 md:h-40 md:w-40 rounded-full border-l-6 border-pink-700 overflow-hidden mx-auto">
                                         <img
                                             src="/images/avishkar.jpg"
@@ -81,7 +93,7 @@ const CafeInsights: React.FC = () => {
                                         />
                                     </div>
                                     <p className="fontStyle mt-2">Avishkar</p>
-                                </div>
+                                </motion.div>
                             </div>
                         </div>
                     </div>
@@ -120,7 +132,11 @@ const CafeInsights: React.FC = () => {
                         </div>
 
                         {/* Navigation Buttons */}
-                        <div className="absolute inset-y-0 -left-8 sm:-left-12 md:-left-28 lg:-left-32 xl:-left-40 flex items-center z-10">
+                        <motion.div
+                            whileTap={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                            className="absolute inset-y-0 -left-8 sm:-left-12 md:-left-28 lg:-left-32 xl:-left-40 flex items-center z-10">
                             <button
                                 onClick={prevSlide}
                                 className="cursor-pointer w-12 h-24 sm:w-16 sm:h-32 md:w-24 md:h-48 lg:w-32 lg:h-64 xl:w-40 xl:h-80 hover:scale-110 transition-transform duration-200 focus:outline-none"
@@ -131,9 +147,13 @@ const CafeInsights: React.FC = () => {
                                     className="w-full h-full object-contain drop-shadow-lg hover:drop-shadow-xl transition-all"
                                 />
                             </button>
-                        </div>
+                        </motion.div>
 
-                        <div className="absolute inset-y-0 -right-8 sm:-right-12 md:-right-28 lg:-right-32 xl:-right-40 flex items-center z-10">
+                        <motion.div
+                            whileTap={{ opacity: 0, x: 50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                        className="absolute inset-y-0 -right-8 sm:-right-12 md:-right-28 lg:-right-32 xl:-right-40 flex items-center z-10">
                             <button
                                 onClick={nextSlide}
                                 className="cursor-pointer w-12 h-24 sm:w-16 sm:h-32 md:w-24 md:h-48 lg:w-32 lg:h-64 xl:w-40 xl:h-80 hover:scale-110 transition-transform duration-200 focus:outline-none"
@@ -144,7 +164,7 @@ const CafeInsights: React.FC = () => {
                                     className="w-full h-full object-contain drop-shadow-lg hover:drop-shadow-xl transition-all"
                                 />
                             </button>
-                        </div>
+                        </motion.div>
                     </div>
                     <h6 className="text-center"> Click to see more of <div className="fontStyle inline text-xl md:text-2xl text-pink-500 mb-4 pl-1 md:mb-6"> our zones </div></h6>
                     {/* <button
