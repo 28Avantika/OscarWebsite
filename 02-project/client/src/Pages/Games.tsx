@@ -117,12 +117,8 @@ const Games: React.FC = () => {
           </p>
           <p className="text-blue-100">₹200/hr per person</p>
           <button
-<<<<<<< HEAD
             //onClick={() => openModal("Snooker")}
-            onClick={ ()=> alert("In Progress !! For any bookings visit our Contact Section. Thank you !")}
-=======
             onClick={() => alert("In Progress !! For booking contact Oscar Cafe. Contact details are given in contact Section as well as in Footer")}
->>>>>>> 958214b19d509611f1471d92e2f3728d48107879
             className="mt-2 px-4 py-2 border-r-4 border-b border-blue-500 rounded hover:font-bold"
           >
             Book my Slot
@@ -144,12 +140,8 @@ const Games: React.FC = () => {
           </p>
           <p className="text-blue-100">₹100/hr per person</p>
           <button
-<<<<<<< HEAD
             //onClick={() => openModal("8 BALL POOL")}
             onClick={ ()=> alert("In Progress !! For any bookings visit our Contact Section. Thank you !")}
-=======
-            onClick={() => alert("In Progress !! For booking contact Oscar Cafe. Contact details are given in contact Section as well as in Footer")}
->>>>>>> 958214b19d509611f1471d92e2f3728d48107879
             className="mt-2 px-4 py-2 border-r-4 border-b border-green-500 rounded hover:font-bold"
           >
             Book my Slot
@@ -171,12 +163,8 @@ const Games: React.FC = () => {
           </p>
           <p className="text-blue-100">₹100/hr per person</p>
           <button
-<<<<<<< HEAD
             //onClick={() => openModal("PlayStation 5")}
             onClick={ ()=> alert("In Progress !! For any bookings visit our Contact Section. Thank you !")}
-=======
-            onClick={() => alert("In Progress !! For booking contact Oscar Cafe. Contact details are given in contact Section as well as in Footer")}
->>>>>>> 958214b19d509611f1471d92e2f3728d48107879
             className="mt-2 px-4 py-2 border-r-4 border-b border-purple-500 rounded hover:font-bold"
           >
             Book my Slot
