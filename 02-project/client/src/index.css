@@ -39,11 +39,11 @@ span {
     
   }
   
-  .neon-link:hover {
+  /* .neon-link:hover {
     color: #d8b240f3 ;
     text-shadow: 0 0 8px #ffd900;
     border-top: #ffd900;
-  }
+  } */
 
   .zones {
     padding: 10px;

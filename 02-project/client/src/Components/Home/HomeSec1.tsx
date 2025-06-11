@@ -15,7 +15,7 @@ const HomeSec1: React.FC = () => {
           </h1>
 
           <p className="text-xl fontStyle sm:text-2xl sm:text-center md:text-3xl lg:text-left text-yellow-300">
-            <div className=" inline font-bold animate-pulse">24/7</div> Cafe & Gaming Zone
+           24/7 Cafe & Gaming Zone
           </p>
           <p className="fontStyle sm:pb-0 italic text-gray-200 sm:text-center md:pb-10 lg:text-left lg:spb-20"> 
             Tasty bites, top-tier games, and a vibe you won’t forget <br></br> — welcome to your new 

@@ -129,7 +129,7 @@ export default function ConfirmOrderModal({
                         <div className="flex justify-between items-start">
                           <div>
                             <p className="font-medium text-sm">
-                              {item.name} <p className="inline text-yellow-200 text-xs">({item.portion})</p>
+                              {item.name} <span className="inline text-yellow-200 text-xs">({item.portion})</span>
                             </p>
                             <p className="text-yellow-100 text-xs">Qty: {item.quantity}</p>
                           </div>

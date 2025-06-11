@@ -41,7 +41,7 @@ const AboutUs: React.FC = () => {
             <span className="ml-2 text-white animate-slide-arrow">&rarr;</span>
           </button>
         </div>
-        <p className="mt-3 text-center md:text-justify lg:pb-20">We don’t just serve food — we serve <div className="inline fontStyle font-bold text-yellow-300">experiences</div> </p>
+        <p className="mt-3 text-center md:text-justify lg:pb-20">We don’t just serve food — we serve <span className="inline fontStyle font-bold text-yellow-300">experiences</span> </p>
       </div>
     </section>
 
