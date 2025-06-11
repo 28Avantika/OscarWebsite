@@ -26,10 +26,10 @@ export default function AuthModal({ isOpen, onClose, initialAuthType = 'login' }
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-black rounded-lg m-6 p-6 w-full max-w-md border-b border-t border-l border-r border-yellow-200">
+    <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+      <div className="bg-black rounded-lg m-6 p-4 w-full max-w-md border-b border-t border-l border-r border-yellow-200 Overflow-y-auto">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-center text-yellow-200 text-xl font-bold">{titles[authType]}</h2>
+          <p className="text-center text-yellow-200 text-2xl font-bold">{titles[authType]}</p>
           <button
             onClick={onClose}
             className="text-yellow-200 hover:font-bold text-xl"
