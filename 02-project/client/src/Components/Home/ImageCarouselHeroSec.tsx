@@ -34,6 +34,7 @@ const ImageCarousel = () => {
 
                         key={index}
                         src={img}
+                        loading='lazy'
                         alt={`Oscar Cafe & Gaming Zone ${index + 1}`}
                         className={`w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 ease-in-out rounded-lg ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
                             }`}

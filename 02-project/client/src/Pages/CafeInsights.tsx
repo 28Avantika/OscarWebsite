@@ -75,6 +75,7 @@ const CafeInsights: React.FC = () => {
                                         <img
                                             src="/images/aditya.jpg"
                                             alt="Aditya"
+                                            loading='lazy'
                                             className="w-full h-full object-cover group-hover:scale-110 transition"
                                         />
                                     </div>
@@ -89,6 +90,7 @@ const CafeInsights: React.FC = () => {
                                         <img
                                             src="/images/avishkar.jpg"
                                             alt="Avishkar"
+                                            loading='lazy'
                                             className="w-full h-full object-cover group-hover:scale-110 transition"
                                         />
                                     </div>
@@ -124,6 +126,7 @@ const CafeInsights: React.FC = () => {
                                         <img
                                             src={slide.src}
                                             alt={slide.alt}
+                                            loading='lazy'
                                             className="w-full h-full object-cover rounded-xl shadow-lg"
                                         />
                                     )}
@@ -144,6 +147,7 @@ const CafeInsights: React.FC = () => {
                                 <img
                                     src="/images/lb.png"
                                     alt="Previous Slide"
+                                    loading='lazy'
                                     className="w-full h-full object-contain drop-shadow-lg hover:drop-shadow-xl transition-all"
                                 />
                             </button>
@@ -161,6 +165,7 @@ const CafeInsights: React.FC = () => {
                                 <img
                                     src="/images/rb.png"
                                     alt="Next Slide"
+                                    loading='lazy'
                                     className="w-full h-full object-contain drop-shadow-lg hover:drop-shadow-xl transition-all"
                                 />
                             </button>
