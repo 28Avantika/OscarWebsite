@@ -51,12 +51,12 @@ To run this project locally:
 ### Menu Homepage 
 ![Menu Homepage ](./02-project/screenshots/4.png)
 
+### Order Now Page 
+![Order Now ](./02-project/screenshots/5.png)
+
 ### For multiple Menu categories
 ![multiple Menu categories](./02-project/screenshots/13.png)
 ![multiple Menu categories](./02-project/screenshots/14.png)
-
-### Order Now Page 
-![Order Now ](./02-project/screenshots/5.png)
 
 ### Modal to select full or half 
 ![ full or half  ](./02-project/screenshots/8.png)
