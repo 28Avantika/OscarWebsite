@@ -48,6 +48,9 @@ To run this project locally:
 ### Contact Us
 ![Contact Us Page](./02-project/screenshots/3.png)
 
+### Gaming Zone 
+![Gaming Zone ](./02-project/screenshots/6.png)
+
 ### Menu Homepage 
 ![Menu Homepage ](./02-project/screenshots/4.png)
 
@@ -60,9 +63,6 @@ To run this project locally:
 
 ### Modal to select full or half 
 ![ full or half  ](./02-project/screenshots/8.png)
-
-### Gaming Zone 
-![Gaming Zone ](./02-project/screenshots/6.png)
 
 ### Order ummary 
 ![Order summary ](./02-project/screenshots/9.png)
