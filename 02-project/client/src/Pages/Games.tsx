@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import { motion } from "framer-motion";
 import { GiBlackball } from "react-icons/gi";
 import { FaGamepad, FaCrown } from "react-icons/fa";
-import BookingModal from "../Components/Game/BookingModal";
+//import BookingModal from "../Components/Game/BookingModal";
 // Media carousel data
 const gamingMedia = [
   {
@@ -115,11 +115,10 @@ const Games: React.FC = () => {
           </p>
           <p className="text-blue-100">₹200/hr per person</p>
           <button
-            onClick={() => openModal("Snooker")}
-            //onClick={() => alert("In Progress !! For booking contact Oscar Cafe. Contact details are given in contact Section as well as in Footer")}
+            onClick={() => alert("In Progress !! For booking contact Oscar Cafe. Contact details are given in contact Section as well as in Footer")}
             className="mt-2 px-4 py-2 border-r-4 border-b border-blue-500 rounded hover:font-bold"
           >
-            Book my Slot
+            Book my Slot now
           </button>
         </motion.div>
 
@@ -138,8 +137,8 @@ const Games: React.FC = () => {
           </p>
           <p className="text-blue-100">₹100/hr per person</p>
           <button
-            onClick={() => openModal("8 BALL POOL")}
-            //onClick={ ()=> alert("In Progress !! For any bookings visit our Contact Section. Thank you !")}
+            // onClick={() => openModal("8 BALL POOL")}
+            onClick={ ()=> alert("In Progress !! For any bookings visit our Contact Section. Thank you !")}
             className="mt-2 px-4 py-2 border-r-4 border-b border-green-500 rounded hover:font-bold"
           >
             Book my Slot
@@ -161,8 +160,8 @@ const Games: React.FC = () => {
           </p>
           <p className="text-blue-100">₹100/hr per person</p>
           <button
-            onClick={() => openModal("PlayStation 5")}
-            //onClick={ ()=> alert("In Progress !! For any bookings visit our Contact Section. Thank you !")}
+            // onClick={() => openModal("PlayStation 5")}
+            onClick={ ()=> alert("In Progress !! For any bookings visit our Contact Section. Thank you !")}
             className="mt-2 px-4 py-2 border-r-4 border-b border-purple-500 rounded hover:font-bold"
           >
             Book my Slot
@@ -171,11 +170,11 @@ const Games: React.FC = () => {
       </div>
 
       {/* Modal */}
-      <BookingModal
+      {/* <BookingModal
         isOpen={isModalOpen}
         closeModal={closeModal}
         game={selectedGame}
-      />
+      /> */}
     </div>
   );
 };
